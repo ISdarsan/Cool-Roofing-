@@ -2,6 +2,18 @@
 
 A working, end-to-end product for a cool-roofing company. A sales rep answers a few day-one questions about a building and gets **honest, explained estimates** of the five things a customer asks about — plus a transparent comparison of roofing options and a customer-ready PDF proposal.
 
+> **Machine-learning decision support for cool (heat-reflective) roofing.** Trained on 2,500 historical installations in India, it predicts installation cost, roof-temperature drop, monthly electricity savings, customer rating and referral, compares every valid roofing option, explains each estimate and generates a customer proposal PDF. Built with Python, scikit-learn, LightGBM, FastAPI and React + TypeScript.
+
+**What's inside**
+- **Data audit and cleaning**: finds hidden placeholders (58 readings of 120 °C, 48 suspected 0 kWh) and keeps a record-level audit trail; no row is deleted.
+- **6 models for 5 tasks**, evaluated on 500 held-out buildings against baselines, with bootstrap significance tests and an independent leakage/provenance review.
+- **Roofing-option comparison** with transparent, adjustable scoring, plus a **what-if simulator**.
+- **Explanations** per customer (exact Shapley values) and global insights.
+- **PDF proposals** and an optional **AI sales assistant** (free built-in mode, or Gemini/Groq/Ollama/Claude).
+- **FastAPI backend + React/TypeScript/Tailwind web app**; 153 backend and 30 UI tests (including accessibility checks).
+
+**Tech stack:** Python · pandas · scikit-learn · LightGBM · FastAPI · ReportLab · React 19 · TypeScript · Vite · Tailwind CSS · Recharts
+
 | Question | Output | Required metrics (hold-out) |
 |---|---|---|
 | A. How much will it cost? | INR + likely range | MAE, RMSE |
@@ -39,6 +51,13 @@ Independent review (leakage, provenance, replication): [`docs/model_review.md`](
 
 ## Business answer
 No single method wins everywhere, but **coated products (sheet + coating, tiles + coating) are consistently strongest** on cooling, savings, predicted satisfaction and referral; basic coating is cheapest but weakest and not good value per °C. Electricity savings alone do not pay back the roof at realistic tariffs (break-even tariff ≈ ₹147–191/kWh for 10 years), so the case rests on comfort and benefits the data does not measure. See [`docs/business_recommendations.md`](docs/business_recommendations.md).
+
+## Screenshots
+| Customer prediction | Roofing comparison |
+|---|---|
+| ![Customer prediction](presentation/presentation_assets/ui_predict.png) | ![Roofing comparison](presentation/presentation_assets/ui_compare.png) |
+| **Model performance** | **Data-quality insights** |
+| ![Model performance](presentation/presentation_assets/ui_performance.png) | ![Data-quality insights](presentation/presentation_assets/ui_insights.png) |
 
 ## What-if simulator
 `What-if simulator` (sidebar) starts from the customer on the prediction page, lets you change inputs or the roofing method/quality, and **Run simulation** shows baseline vs scenario for cost, temperature reduction and electricity saved plus a chart of every valid roofing option. Every number comes from the existing `/api/predict` and `/api/compare` endpoints and trained models; nothing is computed in the browser.
