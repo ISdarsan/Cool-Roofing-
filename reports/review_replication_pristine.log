@@ -1,0 +1,8 @@
+[pristine] hold-out 500 buildings | overlap with production hold-out: 97 | share inside the early-exploration CV pool: 0.0%
+cost loglinear_ridge {'mae': 25942.9086, 'rmse': 42903.2945, 'r2': 0.9971}
+temperature_drop ratio_lightgbm {'mae': 0.4169, 'rmse': 0.5237, 'r2': 0.9383}
+units_saved ratio_lightgbm {'mae': 3.5445, 'rmse': 5.509, 'r2': 0.9882}
+rating lightgbm {'mae': 0.8258, 'rmse': 0.9725, 'r2': 0.3069}
+high_rating lightgbm {'accuracy': 0.678, 'f1': 0.6212, 'roc_auc': 0.7469}
+referral lightgbm {'accuracy': 0.518, 'f1': 0.5794, 'roc_auc': 0.6531}
+DONE

@@ -1,0 +1,55 @@
+task,task_label,feature,importance,std,share,metric,n_holdout
+cost,Installation cost,location_type,-122.61960734650464,120.63415561311459,0.0,increase in MAE,493
+cost,Installation cost,building_size,744967.1228739051,26476.370232896814,0.5451565663055953,increase in MAE,493
+cost,Installation cost,building_age,126454.18698071121,5552.360486435605,0.09253741306519205,increase in MAE,493
+cost,Installation cost,roofing_type,96498.57889338658,4357.525660330654,0.07061631622069929,increase in MAE,493
+cost,Installation cost,cool_roofing_quality,228118.13223906246,10362.791780854157,0.16693367246025767,increase in MAE,493
+cost,Installation cost,cool_roofing_method,169963.89544732225,6551.411135499756,0.12437721181645855,increase in MAE,493
+cost,Installation cost,avg_roof_temperature_before,-32.09953623141657,46.34292415798941,0.0,increase in MAE,493
+cost,Installation cost,num_ac_units,106.17906392897508,193.9666191075393,7.770036036188937e-05,increase in MAE,493
+cost,Installation cost,avg_units_before,411.4860640617055,195.39687870371483,0.00030111977143513927,increase in MAE,493
+temperature_drop,Roof temperature drop,location_type,-0.001076394992177685,0.0007072569061544079,0.0,increase in MAE,486
+temperature_drop,Roof temperature drop,building_size,-0.0021272170155583205,0.0015634909458222587,0.0,increase in MAE,486
+temperature_drop,Roof temperature drop,building_age,0.0002782371356702318,0.0007443102452569664,0.00010535676174586089,increase in MAE,486
+temperature_drop,Roof temperature drop,roofing_type,-0.00030245736901484576,0.0013232735849966974,0.0,increase in MAE,486
+temperature_drop,Roof temperature drop,cool_roofing_quality,0.9951044928396985,0.03532381874957759,0.3768044359420303,increase in MAE,486
+temperature_drop,Roof temperature drop,cool_roofing_method,1.1509839156229367,0.043830080972556765,0.43582945130417994,increase in MAE,486
+temperature_drop,Roof temperature drop,avg_roof_temperature_before,0.494531236341074,0.021198367645836245,0.18725828785422943,increase in MAE,486
+temperature_drop,Roof temperature drop,num_ac_units,6.518116014262443e-06,6.840309971232469e-05,2.468137814502382e-06,increase in MAE,486
+temperature_drop,Roof temperature drop,avg_units_before,-9.364994437456753e-05,0.0008043580715676318,0.0,increase in MAE,486
+units_saved,Monthly electricity saved,location_type,0.04830085335354269,0.01971222452806476,0.0007653713121517269,increase in MAE,494
+units_saved,Monthly electricity saved,building_size,1.6409353391308261,0.19825478671279592,0.026002125148262663,increase in MAE,494
+units_saved,Monthly electricity saved,building_age,0.00761936989752499,0.03454466579822856,0.0001207359028121672,increase in MAE,494
+units_saved,Monthly electricity saved,roofing_type,0.01984791842472495,0.019729739187588805,0.00031450846752168127,increase in MAE,494
+units_saved,Monthly electricity saved,cool_roofing_quality,5.793923872225601,0.3733295561949331,0.09181003664953402,increase in MAE,494
+units_saved,Monthly electricity saved,cool_roofing_method,6.591791174992903,0.49607429225946564,0.1044529756877359,increase in MAE,494
+units_saved,Monthly electricity saved,avg_roof_temperature_before,1.7254866960780282,0.13983835894510901,0.027341918930728883,increase in MAE,494
+units_saved,Monthly electricity saved,num_ac_units,11.040292148336125,0.5930070450979135,0.17494355278281346,increase in MAE,494
+units_saved,Monthly electricity saved,avg_units_before,36.23954208248237,1.0811972034872046,0.5742487751184395,increase in MAE,494
+rating,Customer rating (1-5),location_type,0.0007708178129335641,0.0006671332161882023,0.0029790234115981877,increase in MAE,500
+rating,Customer rating (1-5),building_size,-0.00028953548244361473,0.0014671747910987003,0.0,increase in MAE,500
+rating,Customer rating (1-5),building_age,-0.002556677161149934,0.0019659083097035477,0.0,increase in MAE,500
+rating,Customer rating (1-5),roofing_type,1.986270190934558e-05,0.001654932669338217,7.676451297919918e-05,increase in MAE,500
+rating,Customer rating (1-5),cool_roofing_quality,0.045932898067242434,0.01174306942961578,0.17751948178792545,increase in MAE,500
+rating,Customer rating (1-5),cool_roofing_method,0.06976569107027887,0.01319808276819432,0.269627431459735,increase in MAE,500
+rating,Customer rating (1-5),avg_roof_temperature_before,0.028543175485858704,0.006561058588501993,0.11031243257095988,increase in MAE,500
+rating,Customer rating (1-5),num_ac_units,0.08591903445408498,0.01263623471462668,0.3320561757213711,increase in MAE,500
+rating,Customer rating (1-5),avg_units_before,0.02779701158522043,0.005374526333382726,0.10742869053543115,increase in MAE,500
+high_rating,High rating (>= threshold),location_type,0.0016073768343814931,0.0010039563062086614,0.009188002980904678,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),building_size,0.0006928066037735148,0.0005762080837271735,0.003960184696273105,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),building_age,-0.0015756027253669691,0.0009876002693715636,0.0,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),roofing_type,-0.0017216981132076236,0.002101012258032512,0.0,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),cool_roofing_quality,0.026875655136268245,0.012262740866998478,0.15362520737137347,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),cool_roofing_method,0.0541515985324947,0.011545660871711407,0.30953852145615024,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),avg_roof_temperature_before,0.009924004192872059,0.004953534605055939,0.05672707118595813,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),num_ac_units,0.05361012840670849,0.012059838060145824,0.30644339838147383,drop in ROC-AUC,500
+high_rating,High rating (>= threshold),avg_units_before,0.028081433438155057,0.00793363188258579,0.16051761392786662,drop in ROC-AUC,500
+referral,Customer referral,location_type,-0.0037867113153712186,0.005545855752082004,0.0,drop in ROC-AUC,500
+referral,Customer referral,building_size,0.0029898686166306555,0.002426425743438123,0.026438400038676743,drop in ROC-AUC,500
+referral,Customer referral,building_age,-7.722403512653741e-05,0.0026200697936555758,0.0,drop in ROC-AUC,500
+referral,Customer referral,roofing_type,0.0023447403939794143,0.0017506696600914874,0.02073374869318887,drop in ROC-AUC,500
+referral,Customer referral,cool_roofing_quality,0.012992089661888726,0.0044418699306384615,0.11488466814520319,drop in ROC-AUC,500
+referral,Customer referral,cool_roofing_method,0.014838632519519699,0.011814772097695905,0.13121302400908888,drop in ROC-AUC,500
+referral,Customer referral,avg_roof_temperature_before,0.02296287437426336,0.011454664198052685,0.20305295535989437,drop in ROC-AUC,500
+referral,Customer referral,num_ac_units,0.05695990159061024,0.011106367948802464,0.503677203753948,drop in ROC-AUC,500
+referral,Customer referral,avg_units_before,-0.0003123131332113216,0.0007301261910357512,0.0,drop in ROC-AUC,500

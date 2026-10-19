@@ -1,0 +1,85 @@
+
+======== A. TRAIN / TEST SEPARATION ========
+saved split.json equals a fresh re-derivation (seed 42): True
+hold-out size 500 | train pool 2000 | overlap of id sets: 0
+rating distribution train vs test (%): {1.0: 7.8, 2.0: 19.5, 3.0: 30.2, 4.0: 27.7, 5.0: 14.7} {1.0: 8.0, 2.0: 19.4, 3.0: 30.2, 4.0: 27.8, 5.0: 14.6}
+test_predictions ids ⊆ hold-out: True | oof ids ∩ hold-out: 0
+hold-out rows whose 9-feature vector exactly equals a training row: 0 of 500 | of those with no missing input: 0
+DESIGN-LEVEL EXPOSURE: share of production hold-out rows that were inside the early exploration CV pool: 80.6% (403 of 500)
+
+======== B. REPORTED METRICS vs INDEPENDENT RECOMPUTATION FROM THE SAVED MODELS ON HELD-OUT ROWS ========
+            task   n recomputed A reported A recomputed B reported B     R2/AUC          recomputed baseline reported baseline max|csv-model|
+            cost 493   25299.3750 25299.3750   38515.2890 38515.2890     0.9978                  637024.1206       637024.1206        3.5e-09
+temperature_drop 486       0.4139     0.4139       0.5116     0.5116     0.9477                       1.7968            1.7968        1.8e-15
+     units_saved 494       3.6170     3.6170       5.8702     5.8702     0.9868                      38.3540           38.3540        5.7e-14
+          rating 500       0.7690     0.7690       0.9220     0.9220     0.3606                       0.9240            0.9240        8.9e-16
+     high_rating 500   acc 0.6880     0.6880    F1 0.6139     0.6139 AUC 0.7551 trivial acc 0.5760 F1 0.5955     0.5760/0.5955        9.7e-17
+        referral 500   acc 0.5120     0.5120    F1 0.5689     0.5689 AUC 0.6555 trivial acc 0.6260 F1 0.5444     0.6260/0.5444        1.1e-16
+
+======== C. PROVENANCE: saved model == refit on TRAIN only (and != refit on TRAIN+TEST) ========
+            task max|saved - train-only refit| max|saved - train+test refit|    verdict
+            cost                      4.19e-08                      9.62e+03 TRAIN-ONLY
+temperature_drop                      0.00e+00                      2.23e-01 TRAIN-ONLY
+     units_saved                      0.00e+00                      1.83e+01 TRAIN-ONLY
+          rating                      0.00e+00                      3.93e-01 TRAIN-ONLY
+     high_rating                      0.00e+00                      1.42e-01 TRAIN-ONLY
+        referral                      6.05e-15                      7.91e-02 TRAIN-ONLY
+
+======== D. PREPROCESSING IS FITTED ON TRAINING ROWS ONLY (imputer statistics of the saved models) ========
+cost              matches TRAIN medians: True | matches train+test medians: False
+temperature_drop  matches TRAIN medians: True | matches train+test medians: False
+units_saved       matches TRAIN medians: True | matches train+test medians: False
+rating            matches TRAIN medians: True | matches train+test medians: False
+high_rating       matches TRAIN medians: True | matches train+test medians: False
+referral          matches TRAIN medians: True | matches train+test medians: False
+
+======== E. LEAKAGE CONTROLS (selected config refit on TRAIN, scored on HELD-OUT) ========
+            task metric real model shuffled-label model building_id-only model expected if no leakage
+            cost     R2      0.998      -0.107 (±0.044)                 -0.049               chance≈0
+temperature_drop     R2      0.948      -0.036 (±0.035)                 -0.073               chance≈0
+     units_saved     R2      0.987      -0.019 (±0.035)                 -0.046               chance≈0
+          rating     R2      0.361      -0.018 (±0.006)                 -0.064               chance≈0
+     high_rating    AUC      0.755      +0.473 (±0.036)                 +0.479             chance≈0.5
+        referral    AUC      0.655      +0.482 (±0.015)                 +0.529             chance≈0.5
+
+======== F. WHY ARE COST / SAVINGS / COOLING SO ACCURATE?  (ablation: neutralise one input at a time, refit on TRAIN, score on HELD-OUT) ========
+cost
+   without nothing (full model)                                                                         MAE   25,299.375  R2   0.998
+   without ['building_size']                                                                            MAE  536,248.574  R2   0.224
+   without ['cool_roofing_method', 'cool_roofing_quality']                                              MAE  231,688.324  R2   0.818
+   without ['building_age']                                                                             MAE   90,453.264  R2   0.974
+   without ['roofing_type']                                                                             MAE   70,883.738  R2   0.985
+   without ['avg_units_before', 'num_ac_units', 'avg_roof_temperature_before', 'location_type']         MAE   25,052.131  R2   0.998
+units_saved
+   without nothing (full model)                                                                         MAE        3.617  R2   0.987
+   without ['avg_units_before']                                                                         MAE        9.045  R2   0.921
+   without ['num_ac_units']                                                                             MAE        3.877  R2   0.985
+   without ['cool_roofing_method', 'cool_roofing_quality']                                              MAE       10.810  R2   0.853
+temperature_drop
+   without nothing (full model)                                                                         MAE        0.414  R2   0.948
+   without ['avg_roof_temperature_before']                                                              MAE        0.457  R2   0.937
+   without ['cool_roofing_method', 'cool_roofing_quality']                                              MAE        1.541  R2   0.251
+   without ['roofing_type']                                                                             MAE        0.413  R2   0.948
+cost: relative error median 1.9% p90 4.7% max 9.1% | std of log(actual/pred) = 0.029 (a ~3-4% multiplicative noise floor)
+cost: corr(residual, realised savings) = 0.040, corr(residual, realised temp drop) = 0.027  (≈0 -> model does not smuggle post-install info either way)
+units_saved: corr(units_saved, units_before) on hold-out = 0.931 ; by usage band the saved fraction is ~0 below 25 kWh and 0.3-0.54 above (see audit) -> near-deterministic given usage
+
+======== G. HOLD-OUT METRICS WITH 95% BOOTSTRAP INTERVALS AND PAIRED COMPARISON TO BASELINE (2,000 resamples) ========
+            task   metric                  model [95% CI] baseline             improvement [95% CI] CI excludes 0 (better)?
+            cost      MAE 2.53e+04 [2.274e+04, 2.792e+04] 6.37e+05 6.119e+05 [5.674e+05, 6.578e+05]                     yes
+temperature_drop      MAE         0.4139 [0.3869, 0.4414]    1.797             1.386 [1.277, 1.497]                     yes
+     units_saved      MAE            3.617 [3.215, 4.028]    38.35               34.7 [31.8, 37.66]                     yes
+          rating      MAE          0.769 [0.7246, 0.8151]    0.924           0.154 [0.09441, 0.211]                     yes
+     high_rating accuracy         0.6880 [0.6460, 0.7240]   0.5760       +0.1120 [+0.0539, +0.1660]                     yes
+     high_rating       F1         0.6139 [0.5449, 0.6636]   0.5955       +0.0175 [-0.0419, +0.0722]                      NO
+        referral accuracy         0.5120 [0.4680, 0.5581]   0.6260       -0.1135 [-0.1940, -0.0340]                      NO
+        referral       F1         0.5689 [0.5149, 0.6199]   0.5444       +0.0244 [-0.0052, +0.0528]                      NO
+
+======== H. THRESHOLD / SELECTION INTEGRITY (nothing tuned on the hold-out) ========
+referral F1-optimal threshold recomputed from OUT-OF-FOLD train predictions: 0.25 | stored in metadata: 0.25
+cost              validation MAE recomputed from OOF file 25703.0565 | metadata 25703.0565 | hold-out 25299.3750 | gap hold-out/validation 0.98x
+temperature_drop  validation MAE recomputed from OOF file 0.4124 | metadata 0.4124 | hold-out 0.4139 | gap hold-out/validation 1.00x
+units_saved       validation MAE recomputed from OOF file 3.3127 | metadata 3.3127 | hold-out 3.6170 | gap hold-out/validation 1.09x
+rating            validation MAE recomputed from OOF file 0.7844 | metadata 0.7844 | hold-out 0.7690 | gap hold-out/validation 0.98x
+high_rating validation accuracy recomputed 0.6890 | metadata 0.6890 | hold-out 0.6880
+interval coverage recomputed independently on hold-out is stored as {'cost': {'0.8': 0.7768762677484787, '0.9': 0.8823529411764706}, 'temperature_drop': {'0.8': 0.7880658436213992, '0.9': 0.8806584362139918}, 'units_saved': {'0.8': 0.7550607287449392, '0.9': 0.8805668016194332}, 'rating': {'0.8': 0.798, '0.9': 0.9}}

@@ -1,0 +1,11 @@
+import { chromium } from "../frontend/node_modules/playwright-core/index.mjs";
+const OUT = "D:/bia hackathon/presentation/presentation_assets";
+const b = await chromium.launch({ channel: "msedge", headless: true });
+const p = await (await b.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: "light", reducedMotion: "reduce" })).newPage();
+const errs = []; p.on("pageerror", (e) => errs.push(e.message));
+await p.goto("http://127.0.0.1:8000/insights");
+await p.waitForSelector("text=Usable records per task");
+await p.waitForTimeout(1500);
+await p.screenshot({ path: `${OUT}/ui_insights.png` });
+console.log("insights screenshot captured; page errors:", errs.length);
+await b.close();

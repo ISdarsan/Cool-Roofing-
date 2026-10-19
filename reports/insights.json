@@ -1,0 +1,2991 @@
+{
+ "feature_importance": [
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "location_type",
+   "importance": -122.61960734650464,
+   "std": 120.63415561311459,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "building_size",
+   "importance": 744967.1228739051,
+   "std": 26476.370232896814,
+   "share": 0.5451565663055953,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "building_age",
+   "importance": 126454.18698071121,
+   "std": 5552.360486435605,
+   "share": 0.09253741306519205,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "roofing_type",
+   "importance": 96498.57889338658,
+   "std": 4357.525660330654,
+   "share": 0.07061631622069929,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "cool_roofing_quality",
+   "importance": 228118.13223906246,
+   "std": 10362.791780854157,
+   "share": 0.16693367246025767,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "cool_roofing_method",
+   "importance": 169963.89544732225,
+   "std": 6551.411135499756,
+   "share": 0.12437721181645855,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "avg_roof_temperature_before",
+   "importance": -32.09953623141657,
+   "std": 46.34292415798941,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "num_ac_units",
+   "importance": 106.17906392897508,
+   "std": 193.9666191075393,
+   "share": 7.770036036188937e-05,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "cost",
+   "task_label": "Installation cost",
+   "feature": "avg_units_before",
+   "importance": 411.4860640617055,
+   "std": 195.39687870371483,
+   "share": 0.00030111977143513927,
+   "metric": "increase in MAE",
+   "n_holdout": 493
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "location_type",
+   "importance": -0.001076394992177685,
+   "std": 0.0007072569061544079,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "building_size",
+   "importance": -0.0021272170155583205,
+   "std": 0.0015634909458222587,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "building_age",
+   "importance": 0.0002782371356702318,
+   "std": 0.0007443102452569664,
+   "share": 0.00010535676174586089,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "roofing_type",
+   "importance": -0.00030245736901484576,
+   "std": 0.0013232735849966974,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "cool_roofing_quality",
+   "importance": 0.9951044928396985,
+   "std": 0.03532381874957759,
+   "share": 0.3768044359420303,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "cool_roofing_method",
+   "importance": 1.1509839156229367,
+   "std": 0.043830080972556765,
+   "share": 0.43582945130417994,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "avg_roof_temperature_before",
+   "importance": 0.494531236341074,
+   "std": 0.021198367645836245,
+   "share": 0.18725828785422943,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "num_ac_units",
+   "importance": 6.518116014262443e-06,
+   "std": 6.840309971232469e-05,
+   "share": 2.468137814502382e-06,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "temperature_drop",
+   "task_label": "Roof temperature drop",
+   "feature": "avg_units_before",
+   "importance": -9.364994437456753e-05,
+   "std": 0.0008043580715676318,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 486
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "location_type",
+   "importance": 0.04830085335354269,
+   "std": 0.01971222452806476,
+   "share": 0.0007653713121517269,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "building_size",
+   "importance": 1.6409353391308261,
+   "std": 0.19825478671279592,
+   "share": 0.026002125148262663,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "building_age",
+   "importance": 0.00761936989752499,
+   "std": 0.03454466579822856,
+   "share": 0.0001207359028121672,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "roofing_type",
+   "importance": 0.01984791842472495,
+   "std": 0.019729739187588805,
+   "share": 0.00031450846752168127,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "cool_roofing_quality",
+   "importance": 5.793923872225601,
+   "std": 0.3733295561949331,
+   "share": 0.09181003664953402,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "cool_roofing_method",
+   "importance": 6.591791174992903,
+   "std": 0.49607429225946564,
+   "share": 0.1044529756877359,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "avg_roof_temperature_before",
+   "importance": 1.7254866960780282,
+   "std": 0.13983835894510901,
+   "share": 0.027341918930728883,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "num_ac_units",
+   "importance": 11.040292148336125,
+   "std": 0.5930070450979135,
+   "share": 0.17494355278281346,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "units_saved",
+   "task_label": "Monthly electricity saved",
+   "feature": "avg_units_before",
+   "importance": 36.23954208248237,
+   "std": 1.0811972034872046,
+   "share": 0.5742487751184395,
+   "metric": "increase in MAE",
+   "n_holdout": 494
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "location_type",
+   "importance": 0.0007708178129335641,
+   "std": 0.0006671332161882023,
+   "share": 0.0029790234115981877,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "building_size",
+   "importance": -0.00028953548244361473,
+   "std": 0.0014671747910987003,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "building_age",
+   "importance": -0.002556677161149934,
+   "std": 0.0019659083097035477,
+   "share": 0.0,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "roofing_type",
+   "importance": 1.986270190934558e-05,
+   "std": 0.001654932669338217,
+   "share": 7.676451297919918e-05,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "cool_roofing_quality",
+   "importance": 0.045932898067242434,
+   "std": 0.01174306942961578,
+   "share": 0.17751948178792545,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "cool_roofing_method",
+   "importance": 0.06976569107027887,
+   "std": 0.01319808276819432,
+   "share": 0.269627431459735,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "avg_roof_temperature_before",
+   "importance": 0.028543175485858704,
+   "std": 0.006561058588501993,
+   "share": 0.11031243257095988,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "num_ac_units",
+   "importance": 0.08591903445408498,
+   "std": 0.01263623471462668,
+   "share": 0.3320561757213711,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "rating",
+   "task_label": "Customer rating (1-5)",
+   "feature": "avg_units_before",
+   "importance": 0.02779701158522043,
+   "std": 0.005374526333382726,
+   "share": 0.10742869053543115,
+   "metric": "increase in MAE",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "location_type",
+   "importance": 0.0016073768343814931,
+   "std": 0.0010039563062086614,
+   "share": 0.009188002980904678,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "building_size",
+   "importance": 0.0006928066037735148,
+   "std": 0.0005762080837271735,
+   "share": 0.003960184696273105,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "building_age",
+   "importance": -0.0015756027253669691,
+   "std": 0.0009876002693715636,
+   "share": 0.0,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "roofing_type",
+   "importance": -0.0017216981132076236,
+   "std": 0.002101012258032512,
+   "share": 0.0,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "cool_roofing_quality",
+   "importance": 0.026875655136268245,
+   "std": 0.012262740866998478,
+   "share": 0.15362520737137347,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "cool_roofing_method",
+   "importance": 0.0541515985324947,
+   "std": 0.011545660871711407,
+   "share": 0.30953852145615024,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "avg_roof_temperature_before",
+   "importance": 0.009924004192872059,
+   "std": 0.004953534605055939,
+   "share": 0.05672707118595813,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "num_ac_units",
+   "importance": 0.05361012840670849,
+   "std": 0.012059838060145824,
+   "share": 0.30644339838147383,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "high_rating",
+   "task_label": "High rating (>= threshold)",
+   "feature": "avg_units_before",
+   "importance": 0.028081433438155057,
+   "std": 0.00793363188258579,
+   "share": 0.16051761392786662,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "location_type",
+   "importance": -0.0037867113153712186,
+   "std": 0.005545855752082004,
+   "share": 0.0,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "building_size",
+   "importance": 0.0029898686166306555,
+   "std": 0.002426425743438123,
+   "share": 0.026438400038676743,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "building_age",
+   "importance": -7.722403512653741e-05,
+   "std": 0.0026200697936555758,
+   "share": 0.0,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "roofing_type",
+   "importance": 0.0023447403939794143,
+   "std": 0.0017506696600914874,
+   "share": 0.02073374869318887,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "cool_roofing_quality",
+   "importance": 0.012992089661888726,
+   "std": 0.0044418699306384615,
+   "share": 0.11488466814520319,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "cool_roofing_method",
+   "importance": 0.014838632519519699,
+   "std": 0.011814772097695905,
+   "share": 0.13121302400908888,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "avg_roof_temperature_before",
+   "importance": 0.02296287437426336,
+   "std": 0.011454664198052685,
+   "share": 0.20305295535989437,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "num_ac_units",
+   "importance": 0.05695990159061024,
+   "std": 0.011106367948802464,
+   "share": 0.503677203753948,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  },
+  {
+   "task": "referral",
+   "task_label": "Customer referral",
+   "feature": "avg_units_before",
+   "importance": -0.0003123131332113216,
+   "std": 0.0007301261910357512,
+   "share": 0.0,
+   "metric": "drop in ROC-AUC",
+   "n_holdout": 500
+  }
+ ],
+ "marginal_effects": {
+  "population": {
+   "method_comparison_rows": 1323,
+   "roof_types": [
+    "concrete_flat",
+    "concrete_slanted"
+   ],
+   "note": "Only concrete roofs accept all five methods, so the building mix is identical for each method."
+  },
+  "method": {
+   "cost": [
+    {
+     "level": "basic_coating",
+     "mean": 893143.584116305,
+     "ci95": [
+      861161.7063556465,
+      926471.591741481
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet",
+     "mean": 979355.5782041665,
+     "ci95": [
+      945491.1946759474,
+      1016457.139802704
+     ],
+     "diff_vs_reference": 86211.9940878618,
+     "diff_ci95": [
+      82851.85700634542,
+      89532.80132521508
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet_with_coating",
+     "mean": 1251011.316147711,
+     "ci95": [
+      1203974.2483056486,
+      1298689.0092720797
+     ],
+     "diff_vs_reference": 357867.7320314059,
+     "diff_ci95": [
+      344823.9093987301,
+      371628.1957056087
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles",
+     "mean": 1066562.8849937741,
+     "ci95": [
+      1024196.1254133753,
+      1110090.6930949606
+     ],
+     "diff_vs_reference": 173419.30087746918,
+     "diff_ci95": [
+      167227.35030879016,
+      179749.9253073314
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles_with_coating",
+     "mean": 1335396.0415294261,
+     "ci95": [
+      1280812.8753413463,
+      1387166.1179128967
+     ],
+     "diff_vs_reference": 442252.4574131213,
+     "diff_ci95": [
+      425961.27165070805,
+      458966.74272141105
+     ],
+     "reference": "basic_coating"
+    }
+   ],
+   "temperature_drop": [
+    {
+     "level": "basic_coating",
+     "mean": 4.643269742223384,
+     "ci95": [
+      4.591348443608084,
+      4.697178647644512
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet",
+     "mean": 6.000867640119932,
+     "ci95": [
+      5.923721815491262,
+      6.078610369223729
+     ],
+     "diff_vs_reference": 1.3575978978965477,
+     "diff_ci95": [
+      1.328304477838663,
+      1.3852478736679115
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet_with_coating",
+     "mean": 7.753082315658948,
+     "ci95": [
+      7.660680387441052,
+      7.845991823699781
+     ],
+     "diff_vs_reference": 3.109812573435565,
+     "diff_ci95": [
+      3.0680502534596035,
+      3.151901896281116
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles",
+     "mean": 5.681508794074789,
+     "ci95": [
+      5.605885574840023,
+      5.762038347704218
+     ],
+     "diff_vs_reference": 1.0382390518514049,
+     "diff_ci95": [
+      1.0163460257706796,
+      1.0614456143672577
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles_with_coating",
+     "mean": 8.201271557986209,
+     "ci95": [
+      8.092121618748774,
+      8.302766958356688
+     ],
+     "diff_vs_reference": 3.558001815762825,
+     "diff_ci95": [
+      3.5116726772055507,
+      3.6075932032733795
+     ],
+     "reference": "basic_coating"
+    }
+   ],
+   "units_saved": [
+    {
+     "level": "basic_coating",
+     "mean": 40.779396364341665,
+     "ci95": [
+      38.78169380602439,
+      42.98190477774485
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet",
+     "mean": 51.02667428800284,
+     "ci95": [
+      48.41357407237738,
+      54.10034121991683
+     ],
+     "diff_vs_reference": 10.247277923661175,
+     "diff_ci95": [
+      9.712099258088537,
+      10.802528545244723
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet_with_coating",
+     "mean": 62.0621583423667,
+     "ci95": [
+      58.781745541713526,
+      65.41915235623529
+     ],
+     "diff_vs_reference": 21.28276197802504,
+     "diff_ci95": [
+      20.216948901046365,
+      22.248579481702308
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles",
+     "mean": 49.09365416387284,
+     "ci95": [
+      46.89143557869401,
+      51.58043428117311
+     ],
+     "diff_vs_reference": 8.314257799531172,
+     "diff_ci95": [
+      7.820034711063847,
+      8.802431110216412
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles_with_coating",
+     "mean": 64.87848947155153,
+     "ci95": [
+      61.496115367628725,
+      68.20469071968428
+     ],
+     "diff_vs_reference": 24.099093107209875,
+     "diff_ci95": [
+      22.85111927300019,
+      25.270479248067574
+     ],
+     "reference": "basic_coating"
+    }
+   ],
+   "rating": [
+    {
+     "level": "basic_coating",
+     "mean": 3.0025503754871656,
+     "ci95": [
+      2.9717767935288406,
+      3.03336624208645
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet",
+     "mean": 3.3589222297360566,
+     "ci95": [
+      3.3287162004861988,
+      3.392519714090582
+     ],
+     "diff_vs_reference": 0.35637185424889095,
+     "diff_ci95": [
+      0.35136544227975763,
+      0.3608002467382038
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet_with_coating",
+     "mean": 3.6275006885363634,
+     "ci95": [
+      3.600200370178436,
+      3.6601764124181035
+     ],
+     "diff_vs_reference": 0.6249503130491973,
+     "diff_ci95": [
+      0.6193808496333709,
+      0.6309222037130247
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles",
+     "mean": 3.204526729728043,
+     "ci95": [
+      3.172751651670994,
+      3.231273159727872
+     ],
+     "diff_vs_reference": 0.2019763542408775,
+     "diff_ci95": [
+      0.19722562535573526,
+      0.20618046129778134
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles_with_coating",
+     "mean": 3.734055172468712,
+     "ci95": [
+      3.703112678011896,
+      3.7699513797466437
+     ],
+     "diff_vs_reference": 0.7315047969815455,
+     "diff_ci95": [
+      0.7219052143634801,
+      0.7390981852340781
+     ],
+     "reference": "basic_coating"
+    }
+   ],
+   "high_rating": [
+    {
+     "level": "basic_coating",
+     "mean": 0.34842317844703596,
+     "ci95": [
+      0.3392939181498336,
+      0.35742586499072126
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet",
+     "mean": 0.4706655046593569,
+     "ci95": [
+      0.4597566783127719,
+      0.4817803461162023
+     ],
+     "diff_vs_reference": 0.12224232621232099,
+     "diff_ci95": [
+      0.12000040453097749,
+      0.12440163117528355
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet_with_coating",
+     "mean": 0.5496588268934427,
+     "ci95": [
+      0.5393939271331042,
+      0.5600989131724402
+     ],
+     "diff_vs_reference": 0.20123564844640682,
+     "diff_ci95": [
+      0.19823426299662864,
+      0.20382542144748494
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles",
+     "mean": 0.42481530607860896,
+     "ci95": [
+      0.41478408418728363,
+      0.4354798939926992
+     ],
+     "diff_vs_reference": 0.07639212763157305,
+     "diff_ci95": [
+      0.07504484327197412,
+      0.07756395413494628
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles_with_coating",
+     "mean": 0.5772261263597772,
+     "ci95": [
+      0.5641177646614715,
+      0.5886323239980547
+     ],
+     "diff_vs_reference": 0.22880294791274136,
+     "diff_ci95": [
+      0.2250888403073845,
+      0.23300451106472309
+     ],
+     "reference": "basic_coating"
+    }
+   ],
+   "referral": [
+    {
+     "level": "basic_coating",
+     "mean": 0.31773825936956823,
+     "ci95": [
+      0.31226543163297366,
+      0.3238620818507071
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet",
+     "mean": 0.3978694329972942,
+     "ci95": [
+      0.39099627092710815,
+      0.4037799355158323
+     ],
+     "diff_vs_reference": 0.08013117362772605,
+     "diff_ci95": [
+      0.07939265405434652,
+      0.08079085801425892
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "sheet_with_coating",
+     "mean": 0.46958953805999987,
+     "ci95": [
+      0.4636153688554583,
+      0.4758592294706073
+     ],
+     "diff_vs_reference": 0.15185127869043163,
+     "diff_ci95": [
+      0.1507679742164697,
+      0.15289045150762373
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles",
+     "mean": 0.34784805223143045,
+     "ci95": [
+      0.3423832074101095,
+      0.3538924099486633
+     ],
+     "diff_vs_reference": 0.030109792861862248,
+     "diff_ci95": [
+      0.029799483415101424,
+      0.030384462816930864
+     ],
+     "reference": "basic_coating"
+    },
+    {
+     "level": "tiles_with_coating",
+     "mean": 0.4791551557598024,
+     "ci95": [
+      0.47291643678294865,
+      0.4853425261624661
+     ],
+     "diff_vs_reference": 0.1614168963902343,
+     "diff_ci95": [
+      0.1603916865192838,
+      0.16251459362056495
+     ],
+     "reference": "basic_coating"
+    }
+   ]
+  },
+  "quality": {
+   "cost": [
+    {
+     "level": "basic",
+     "mean": 808751.0539837506,
+     "ci95": [
+      788244.3472789716,
+      831550.7915732532
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "intermediate",
+     "mean": 1053671.1975963165,
+     "ci95": [
+      1027302.5585233261,
+      1080722.5958218127
+     ],
+     "diff_vs_reference": 244920.143612566,
+     "diff_ci95": [
+      238419.81338072626,
+      251323.28084242516
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "high",
+     "mean": 1379208.3403822856,
+     "ci95": [
+      1341629.52655126,
+      1417910.8645048996
+     ],
+     "diff_vs_reference": 570457.2863985351,
+     "diff_ci95": [
+      553981.7994680627,
+      586185.9552254521
+     ],
+     "reference": "basic"
+    }
+   ],
+   "temperature_drop": [
+    {
+     "level": "basic",
+     "mean": 4.572882333290777,
+     "ci95": [
+      4.530898231974416,
+      4.6162392877658815
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "intermediate",
+     "mean": 5.676083774520531,
+     "ci95": [
+      5.6231151581612435,
+      5.72769450837994
+     ],
+     "diff_vs_reference": 1.1032014412297537,
+     "diff_ci95": [
+      1.0933866891796835,
+      1.1129348490043747
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "high",
+     "mean": 7.561194261859185,
+     "ci95": [
+      7.487041714605655,
+      7.64278071926324
+     ],
+     "diff_vs_reference": 2.988311928568408,
+     "diff_ci95": [
+      2.960981138702709,
+      3.021235851704428
+     ],
+     "reference": "basic"
+    }
+   ],
+   "units_saved": [
+    {
+     "level": "basic",
+     "mean": 36.50610830094504,
+     "ci95": [
+      35.14144001538286,
+      37.96979664179713
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "intermediate",
+     "mean": 44.25364286561878,
+     "ci95": [
+      42.58405619099199,
+      46.0019748950512
+     ],
+     "diff_vs_reference": 7.747534564673734,
+     "diff_ci95": [
+      7.44052427381009,
+      8.060325172741418
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "high",
+     "mean": 54.457014816686,
+     "ci95": [
+      52.3290458561762,
+      56.684966383411
+     ],
+     "diff_vs_reference": 17.950906515740957,
+     "diff_ci95": [
+      17.28993065662138,
+      18.749745320061805
+     ],
+     "reference": "basic"
+    }
+   ],
+   "rating": [
+    {
+     "level": "basic",
+     "mean": 2.91181608297388,
+     "ci95": [
+      2.8912577310778946,
+      2.9344269752428476
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "intermediate",
+     "mean": 3.1777804912484706,
+     "ci95": [
+      3.151833962453305,
+      3.200659070896546
+     ],
+     "diff_vs_reference": 0.26596440827459095,
+     "diff_ci95": [
+      0.26138608543431446,
+      0.27082258542167936
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "high",
+     "mean": 3.5668731016845703,
+     "ci95": [
+      3.541833081504773,
+      3.5889080162192073
+     ],
+     "diff_vs_reference": 0.6550570187106907,
+     "diff_ci95": [
+      0.6510070578073629,
+      0.659563008258137
+     ],
+     "reference": "basic"
+    }
+   ],
+   "high_rating": [
+    {
+     "level": "basic",
+     "mean": 0.32074965447342374,
+     "ci95": [
+      0.314465923664541,
+      0.32741842386819725
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "intermediate",
+     "mean": 0.4069000921372256,
+     "ci95": [
+      0.3991921886789063,
+      0.4145981216462094
+     ],
+     "diff_vs_reference": 0.08615043766380183,
+     "diff_ci95": [
+      0.08422711104360697,
+      0.08777500027636494
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "high",
+     "mean": 0.5375302618616236,
+     "ci95": [
+      0.5299224934792864,
+      0.5459786607011655
+     ],
+     "diff_vs_reference": 0.21678060738819974,
+     "diff_ci95": [
+      0.21439317284928947,
+      0.21908433818493483
+     ],
+     "reference": "basic"
+    }
+   ],
+   "referral": [
+    {
+     "level": "basic",
+     "mean": 0.31187296839962236,
+     "ci95": [
+      0.3066087860314076,
+      0.3172436064418633
+     ],
+     "diff_vs_reference": 0.0,
+     "diff_ci95": [
+      0.0,
+      0.0
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "intermediate",
+     "mean": 0.35891203837862695,
+     "ci95": [
+      0.3536407625214936,
+      0.3635879153998885
+     ],
+     "diff_vs_reference": 0.04703906997900456,
+     "diff_ci95": [
+      0.046671809655774686,
+      0.047438943772677364
+     ],
+     "reference": "basic"
+    },
+    {
+     "level": "high",
+     "mean": 0.39822067626881763,
+     "ci95": [
+      0.39221516921042315,
+      0.4033643335437078
+     ],
+     "diff_vs_reference": 0.08634770786919528,
+     "diff_ci95": [
+      0.08564476036261531,
+      0.08694827225555486
+     ],
+     "reference": "basic"
+    }
+   ]
+  },
+  "grid": [
+   {
+    "cool_roofing_method": "basic_coating",
+    "cool_roofing_quality": "basic",
+    "cost": 646011.6448297993,
+    "temperature_drop": 3.535583203112785,
+    "units_saved": 30.301057535423283,
+    "rating": 2.6922216363872518,
+    "high_rating": 0.23731212257235273,
+    "referral": 0.2692029254578646,
+    "cost_per_celsius_drop": 182717.1382251845,
+    "cost_per_kwh_month_saved": 21319.772224932512
+   },
+   {
+    "cool_roofing_method": "basic_coating",
+    "cool_roofing_quality": "intermediate",
+    "cost": 841648.1933668768,
+    "temperature_drop": 4.459663609673116,
+    "units_saved": 39.505191907975984,
+    "rating": 2.9424497567674526,
+    "high_rating": 0.32039140669112276,
+    "referral": 0.3142958579723254,
+    "cost_per_celsius_drop": 188724.59159056793,
+    "cost_per_kwh_month_saved": 21304.748887878468
+   },
+   {
+    "cool_roofing_method": "basic_coating",
+    "cool_roofing_quality": "high",
+    "cost": 1101679.7371014492,
+    "temperature_drop": 5.6077661267830585,
+    "units_saved": 47.96974175362756,
+    "rating": 3.276159518526582,
+    "high_rating": 0.4519154751038393,
+    "referral": 0.35274197318963546,
+    "cost_per_celsius_drop": 196456.0775528342,
+    "cost_per_kwh_month_saved": 22966.13858710503
+   },
+   {
+    "cool_roofing_method": "sheet",
+    "cool_roofing_quality": "basic",
+    "cost": 708368.8661044295,
+    "temperature_drop": 4.456914058205663,
+    "units_saved": 40.02086565920676,
+    "rating": 3.0241777936965675,
+    "high_rating": 0.34194501864233706,
+    "referral": 0.34435103254228555,
+    "cost_per_celsius_drop": 158937.0709987655,
+    "cost_per_kwh_month_saved": 17699.988604356186
+   },
+   {
+    "cool_roofing_method": "sheet",
+    "cool_roofing_quality": "intermediate",
+    "cost": 922889.5193541168,
+    "temperature_drop": 5.539516095830716,
+    "units_saved": 47.303366755418324,
+    "rating": 3.2773781558170416,
+    "high_rating": 0.442625580369204,
+    "referral": 0.39492085851681075,
+    "cost_per_celsius_drop": 166601.1080008819,
+    "cost_per_kwh_month_saved": 19510.017629948194
+   },
+   {
+    "cool_roofing_method": "sheet",
+    "cool_roofing_quality": "high",
+    "cost": 1208020.9891361715,
+    "temperature_drop": 7.602704257508391,
+    "units_saved": 61.359031100790524,
+    "rating": 3.6881975425932176,
+    "high_rating": 0.5904333422795975,
+    "referral": 0.43673885559856784,
+    "cost_per_celsius_drop": 158893.5920982506,
+    "cost_per_kwh_month_saved": 19687.745511363002
+   },
+   {
+    "cool_roofing_method": "sheet_with_coating",
+    "cool_roofing_quality": "basic",
+    "cost": 904857.7321919557,
+    "temperature_drop": 5.860337915031305,
+    "units_saved": 49.20727645746527,
+    "rating": 3.2446843767708358,
+    "high_rating": 0.42045808259437495,
+    "referral": 0.4140062504114974,
+    "cost_per_celsius_drop": 154403.67864642528,
+    "cost_per_kwh_month_saved": 18388.6977157558
+   },
+   {
+    "cool_roofing_method": "sheet_with_coating",
+    "cool_roofing_quality": "intermediate",
+    "cost": 1178882.5815269246,
+    "temperature_drop": 7.267756212378781,
+    "units_saved": 59.88910139742554,
+    "rating": 3.58014062808599,
+    "high_rating": 0.5298904307234155,
+    "referral": 0.4673271417467123,
+    "cost_per_celsius_drop": 162207.22697316084,
+    "cost_per_kwh_month_saved": 19684.425947616593
+   },
+   {
+    "cool_roofing_method": "sheet_with_coating",
+    "cool_roofing_quality": "high",
+    "cost": 1543104.4262028504,
+    "temperature_drop": 9.627070880429228,
+    "units_saved": 71.54600070376732,
+    "rating": 3.9518466066240947,
+    "high_rating": 0.6623734177645058,
+    "referral": 0.5102482704167085,
+    "cost_per_celsius_drop": 160288.0507860196,
+    "cost_per_kwh_month_saved": 21568.00395583253
+   },
+   {
+    "cool_roofing_method": "tiles",
+    "cool_roofing_quality": "basic",
+    "cost": 771445.9980485302,
+    "temperature_drop": 4.2351458323739495,
+    "units_saved": 38.28502693451058,
+    "rating": 2.8677663372273154,
+    "high_rating": 0.2945864521220252,
+    "referral": 0.29710718870539765,
+    "cost_per_celsius_drop": 182153.3492782012,
+    "cost_per_kwh_month_saved": 20150.070662563372
+   },
+   {
+    "cool_roofing_method": "tiles",
+    "cool_roofing_quality": "intermediate",
+    "cost": 1005068.7719549015,
+    "temperature_drop": 5.210434862267615,
+    "units_saved": 44.94462254704811,
+    "rating": 3.1031138276554917,
+    "high_rating": 0.3928933853161154,
+    "referral": 0.34454995472116917,
+    "cost_per_celsius_drop": 192895.37217580513,
+    "cost_per_kwh_month_saved": 22362.380970110356
+   },
+   {
+    "cool_roofing_method": "tiles",
+    "cool_roofing_quality": "high",
+    "cost": 1315589.9450419103,
+    "temperature_drop": 7.231735136150541,
+    "units_saved": 59.79744651476237,
+    "rating": 3.5615450148239374,
+    "high_rating": 0.5488838587175646,
+    "referral": 0.3845345916064926,
+    "cost_per_celsius_drop": 181918.9890494524,
+    "cost_per_kwh_month_saved": 22000.771299107677
+   },
+   {
+    "cool_roofing_method": "tiles_with_coating",
+    "cool_roofing_quality": "basic",
+    "cost": 965893.2881896956,
+    "temperature_drop": 6.203807412633428,
+    "units_saved": 52.10639121972318,
+    "rating": 3.3522695090390147,
+    "high_rating": 0.45745427600725225,
+    "referral": 0.42346644389459,
+    "cost_per_celsius_drop": 155693.6287581641,
+    "cost_per_kwh_month_saved": 18536.944616193035
+   },
+   {
+    "cool_roofing_method": "tiles_with_coating",
+    "cool_roofing_quality": "intermediate",
+    "cost": 1258401.9924350283,
+    "temperature_drop": 7.656879413399297,
+    "units_saved": 62.26117072142016,
+    "rating": 3.7241162506525294,
+    "high_rating": 0.563044112546609,
+    "referral": 0.47699660217427964,
+    "cost_per_celsius_drop": 164349.19821681723,
+    "cost_per_kwh_month_saved": 20211.666081024898
+   },
+   {
+    "cool_roofing_method": "tiles_with_coating",
+    "cool_roofing_quality": "high",
+    "cost": 1647191.7686270673,
+    "temperature_drop": 10.212885602288152,
+    "units_saved": 74.77076252824672,
+    "rating": 4.0193502960455545,
+    "high_rating": 0.6798024962189555,
+    "referral": 0.5199323569202541,
+    "cost_per_celsius_drop": 161285.63784735053,
+    "cost_per_kwh_month_saved": 22029.89126939551
+   }
+  ],
+  "quality_population_rows": 2500,
+  "by_roof": {
+   "concrete_flat": [
+    {
+     "cool_roofing_method": "basic_coating",
+     "n_buildings": 795,
+     "cost": 880509.2372580356,
+     "temperature_drop": 4.66239343625436,
+     "units_saved": 40.991531892565355,
+     "rating": 3.0049199824171517,
+     "high_rating": 0.3533881850308172,
+     "referral": 0.31734404317068093
+    },
+    {
+     "cool_roofing_method": "sheet",
+     "n_buildings": 795,
+     "cost": 965501.6824894536,
+     "temperature_drop": 6.014356026791218,
+     "units_saved": 50.95053978460332,
+     "rating": 3.351282042602631,
+     "high_rating": 0.47444600701408113,
+     "referral": 0.3974966237309801
+    },
+    {
+     "cool_roofing_method": "sheet_with_coating",
+     "n_buildings": 795,
+     "cost": 1233314.59730774,
+     "temperature_drop": 7.766180213199326,
+     "units_saved": 62.42839418396362,
+     "rating": 3.5897239655731177,
+     "high_rating": 0.5486464639028742,
+     "referral": 0.4692425297728648
+    },
+    {
+     "cool_roofing_method": "tiles",
+     "n_buildings": 795,
+     "cost": 1051475.3607985456,
+     "temperature_drop": 5.692048789327822,
+     "units_saved": 48.79283326667629,
+     "rating": 3.177287147930918,
+     "high_rating": 0.4283434953388708,
+     "referral": 0.34746016610853026
+    },
+    {
+     "cool_roofing_method": "tiles_with_coating",
+     "n_buildings": 795,
+     "cost": 1316505.6222487057,
+     "temperature_drop": 8.229498667423169,
+     "units_saved": 65.24874803144749,
+     "rating": 3.7503536148700785,
+     "high_rating": 0.5820699002533862,
+     "referral": 0.47881161369145075
+    }
+   ],
+   "concrete_slanted": [
+    {
+     "cool_roofing_method": "basic_coating",
+     "n_buildings": 528,
+     "cost": 912166.8904654036,
+     "temperature_drop": 4.614475543824469,
+     "units_saved": 40.45998775650485,
+     "rating": 2.998982501416448,
+     "high_rating": 0.34094745830668344,
+     "referral": 0.31833182353266554
+    },
+    {
+     "cool_roofing_method": "sheet",
+     "n_buildings": 528,
+     "cost": 1000215.1370927971,
+     "temperature_drop": 5.980558421552368,
+     "units_saved": 51.14130862550779,
+     "rating": 3.3704259205903626,
+     "high_rating": 0.4649732710002551,
+     "referral": 0.3984307651312331
+    },
+    {
+     "cool_roofing_method": "sheet_with_coating",
+     "n_buildings": 528,
+     "cost": 1277656.9439465306,
+     "temperature_drop": 7.733361049475994,
+     "units_saved": 61.5107236945077,
+     "rating": 3.684380413452613,
+     "high_rating": 0.551183123441742,
+     "referral": 0.47011202212869757
+    },
+    {
+     "cool_roofing_method": "tiles",
+     "n_buildings": 528,
+     "cost": 1089279.8958559076,
+     "temperature_drop": 5.665638914858575,
+     "units_saved": 49.54659471931081,
+     "rating": 3.2455408727748503,
+     "high_rating": 0.4195029756583283,
+     "referral": 0.3484320853142065
+    },
+    {
+     "cool_roofing_method": "tiles_with_coating",
+     "n_buildings": 528,
+     "cost": 1363839.0023782384,
+     "temperature_drop": 8.158770512527147,
+     "units_saved": 64.32099788989002,
+     "rating": 3.7095149040802893,
+     "high_rating": 0.5699329440767865,
+     "referral": 0.47967242080590017
+    }
+   ],
+   "sheet": [
+    {
+     "cool_roofing_method": "basic_coating",
+     "n_buildings": 503,
+     "cost": 722289.4438468055,
+     "temperature_drop": 4.236025693580631,
+     "units_saved": 33.67077161156759,
+     "rating": 2.838539456590316,
+     "high_rating": 0.30508084959864723,
+     "referral": 0.2529158255800586
+    },
+    {
+     "cool_roofing_method": "sheet",
+     "n_buildings": 503,
+     "cost": 792009.4915189353,
+     "temperature_drop": 5.457240772216322,
+     "units_saved": 41.85664538911429,
+     "rating": 3.169413925848024,
+     "high_rating": 0.4198102730944217,
+     "referral": 0.32393671211444836
+    },
+    {
+     "cool_roofing_method": "sheet_with_coating",
+     "n_buildings": 503,
+     "cost": 1011698.7725780098,
+     "temperature_drop": 7.136686036161652,
+     "units_saved": 50.7643295045969,
+     "rating": 3.482435481120322,
+     "high_rating": 0.5049624680817646,
+     "referral": 0.39029906613082893
+    }
+   ],
+   "tiles": [
+    {
+     "cool_roofing_method": "basic_coating",
+     "n_buildings": 674,
+     "cost": 1018453.7420661913,
+     "temperature_drop": 3.9167218527037666,
+     "units_saved": 27.67339473575154,
+     "rating": 2.6499300721343073,
+     "high_rating": 0.2483734413461071,
+     "referral": 0.24351518163353808
+    },
+    {
+     "cool_roofing_method": "tiles",
+     "n_buildings": 674,
+     "cost": 1216204.181151428,
+     "temperature_drop": 4.788470818320624,
+     "units_saved": 33.20901490007243,
+     "rating": 2.843379151771676,
+     "high_rating": 0.31694749917278925,
+     "referral": 0.2691156655986936
+    },
+    {
+     "cool_roofing_method": "tiles_with_coating",
+     "n_buildings": 674,
+     "cost": 1522755.2655843957,
+     "temperature_drop": 6.944621652448824,
+     "units_saved": 42.625671934998145,
+     "rating": 3.3110544062716003,
+     "high_rating": 0.44841015767207504,
+     "referral": 0.38672961308229237
+    }
+   ]
+  }
+ },
+ "segment_errors": [
+  {
+   "task": "cost",
+   "segment": "location_type",
+   "level": "dense_urban",
+   "n": 297,
+   "mae": 30900.722188234104,
+   "bias": 562.3070934849434,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "location_type",
+   "level": "intermediate",
+   "n": 596,
+   "mae": 24818.196467437938,
+   "bias": -2366.813056478618,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "location_type",
+   "level": "rural",
+   "n": 402,
+   "mae": 23887.659983602534,
+   "bias": -1723.6289672226405,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "location_type",
+   "level": "urban",
+   "n": 664,
+   "mae": 25395.040823324718,
+   "bias": 25.21986053938801,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "roofing_type",
+   "level": "concrete_flat",
+   "n": 637,
+   "mae": 25100.137955090784,
+   "bias": -1696.277634591686,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "roofing_type",
+   "level": "concrete_slanted",
+   "n": 411,
+   "mae": 26670.684400808823,
+   "bias": 245.79141590678452,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "roofing_type",
+   "level": "sheet",
+   "n": 403,
+   "mae": 17994.470682830717,
+   "bias": -104.34969700862138,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "roofing_type",
+   "level": "tiles",
+   "n": 528,
+   "mae": 31560.8674473121,
+   "bias": -2124.5718315125464,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_method",
+   "level": "basic_coating",
+   "n": 499,
+   "mae": 21261.67214313655,
+   "bias": -1455.9356899549541,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_method",
+   "level": "sheet",
+   "n": 337,
+   "mae": 18975.84051221591,
+   "bias": -110.6271710602673,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_method",
+   "level": "sheet_with_coating",
+   "n": 338,
+   "mae": 25709.619809456264,
+   "bias": -1533.6841597549526,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_method",
+   "level": "tiles",
+   "n": 409,
+   "mae": 29816.910981995945,
+   "bias": -2553.4817483917054,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_method",
+   "level": "tiles_with_coating",
+   "n": 396,
+   "mae": 32770.071020738294,
+   "bias": 462.66947170176763,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_quality",
+   "level": "basic",
+   "n": 560,
+   "mae": 17142.797388730734,
+   "bias": 101.22233696748948,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_quality",
+   "level": "high",
+   "n": 579,
+   "mae": 34494.70018538368,
+   "bias": 445.1414742911233,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "cool_roofing_quality",
+   "level": "intermediate",
+   "n": 840,
+   "mae": 25349.941569595783,
+   "bias": -2925.901022079367,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "size_band",
+   "level": "small",
+   "n": 747,
+   "mae": 10213.640425153075,
+   "bias": 623.2898946978125,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "size_band",
+   "level": "medium",
+   "n": 594,
+   "mae": 21761.23076077537,
+   "bias": -4121.703010745833,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "cost",
+   "segment": "size_band",
+   "level": "large",
+   "n": 638,
+   "mae": 47508.75923823966,
+   "bias": -251.7890269381741,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "location_type",
+   "level": "dense_urban",
+   "n": 296,
+   "mae": 0.49720348190562624,
+   "bias": -0.009061476796281722,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "location_type",
+   "level": "intermediate",
+   "n": 585,
+   "mae": 0.3881879070599425,
+   "bias": 0.007657846623567662,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "location_type",
+   "level": "rural",
+   "n": 393,
+   "mae": 0.35861440136394956,
+   "bias": -0.011326863643229502,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "location_type",
+   "level": "urban",
+   "n": 662,
+   "mae": 0.42812263386176425,
+   "bias": 0.010289767755145625,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "roofing_type",
+   "level": "concrete_flat",
+   "n": 630,
+   "mae": 0.4382204731652234,
+   "bias": 0.0161653899878847,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "roofing_type",
+   "level": "concrete_slanted",
+   "n": 408,
+   "mae": 0.42351771468145216,
+   "bias": 0.001083895617627997,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "roofing_type",
+   "level": "sheet",
+   "n": 395,
+   "mae": 0.3913711022269659,
+   "bias": -0.013934703216452717,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "roofing_type",
+   "level": "tiles",
+   "n": 523,
+   "mae": 0.38837945321521616,
+   "bias": -0.0010572433737684077,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_method",
+   "level": "basic_coating",
+   "n": 497,
+   "mae": 0.3274171290988579,
+   "bias": 0.025300088704476437,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_method",
+   "level": "sheet",
+   "n": 330,
+   "mae": 0.39529813320643564,
+   "bias": 0.021461237603059777,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_method",
+   "level": "sheet_with_coating",
+   "n": 336,
+   "mae": 0.4699742323669195,
+   "bias": -0.03205765067715171,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_method",
+   "level": "tiles",
+   "n": 404,
+   "mae": 0.3819973144907597,
+   "bias": 0.018721702725385345,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_method",
+   "level": "tiles_with_coating",
+   "n": 389,
+   "mae": 0.517159925052763,
+   "bias": -0.030537971000738656,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_quality",
+   "level": "basic",
+   "n": 549,
+   "mae": 0.30880229201709186,
+   "bias": 0.028160903551088037,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_quality",
+   "level": "high",
+   "n": 573,
+   "mae": 0.5482788927708295,
+   "bias": -0.0223035937091728,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "cool_roofing_quality",
+   "level": "intermediate",
+   "n": 834,
+   "mae": 0.38716055302189933,
+   "bias": 0.002264870737636159,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "size_band",
+   "level": "small",
+   "n": 730,
+   "mae": 0.40723851926138915,
+   "bias": 0.0007026415115191705,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "size_band",
+   "level": "medium",
+   "n": 583,
+   "mae": 0.4345936151030079,
+   "bias": -0.00890335140493282,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "temperature_drop",
+   "segment": "size_band",
+   "level": "large",
+   "n": 622,
+   "mae": 0.3985910069504553,
+   "bias": 0.015192142220927346,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "location_type",
+   "level": "dense_urban",
+   "n": 286,
+   "mae": 5.254831935774742,
+   "bias": 0.3164445883737822,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "location_type",
+   "level": "intermediate",
+   "n": 597,
+   "mae": 2.6450755842586093,
+   "bias": -0.08895092818304012,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "location_type",
+   "level": "rural",
+   "n": 395,
+   "mae": 2.2580817705542993,
+   "bias": -0.05009417329458318,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "location_type",
+   "level": "urban",
+   "n": 660,
+   "mae": 3.7319056232532395,
+   "bias": -0.0038811084585440776,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "roofing_type",
+   "level": "concrete_flat",
+   "n": 631,
+   "mae": 3.6306985037485138,
+   "bias": 0.23881035712613335,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "roofing_type",
+   "level": "concrete_slanted",
+   "n": 407,
+   "mae": 3.659892157520025,
+   "bias": -0.08393690522537223,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "roofing_type",
+   "level": "sheet",
+   "n": 394,
+   "mae": 3.177168183378115,
+   "bias": 0.05622074319167707,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "roofing_type",
+   "level": "tiles",
+   "n": 526,
+   "mae": 2.7639285851267252,
+   "bias": -0.19994839604407985,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_method",
+   "level": "basic_coating",
+   "n": 499,
+   "mae": 3.3511591755607273,
+   "bias": 0.3009859631376883,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_method",
+   "level": "sheet",
+   "n": 329,
+   "mae": 3.1980808057653736,
+   "bias": 0.19522548466075113,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_method",
+   "level": "sheet_with_coating",
+   "n": 335,
+   "mae": 3.9233850295258104,
+   "bias": -0.2728865555402167,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_method",
+   "level": "tiles",
+   "n": 406,
+   "mae": 3.2235771751883076,
+   "bias": 0.19596587572703927,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_method",
+   "level": "tiles_with_coating",
+   "n": 389,
+   "mae": 2.9271831164123037,
+   "bias": -0.43460462231388325,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_quality",
+   "level": "basic",
+   "n": 553,
+   "mae": 2.867419173906298,
+   "bias": 0.34239952482548114,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_quality",
+   "level": "high",
+   "n": 581,
+   "mae": 3.9536310446674787,
+   "bias": -0.2185213387774741,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "cool_roofing_quality",
+   "level": "intermediate",
+   "n": 824,
+   "mae": 3.159508645487389,
+   "bias": -0.035049645607500256,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "size_band",
+   "level": "small",
+   "n": 732,
+   "mae": 2.7594873446804606,
+   "bias": -0.04100514717791967,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "size_band",
+   "level": "medium",
+   "n": 582,
+   "mae": 3.3317351429871254,
+   "bias": -0.012531436497031478,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "units_saved",
+   "segment": "size_band",
+   "level": "large",
+   "n": 623,
+   "mae": 3.913983107413256,
+   "bias": 0.12365864887663994,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "location_type",
+   "level": "dense_urban",
+   "n": 300,
+   "mae": 0.7271280559194782,
+   "bias": -0.021789309955969133,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "location_type",
+   "level": "intermediate",
+   "n": 605,
+   "mae": 0.7921119349579772,
+   "bias": -0.00042974573211798645,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "location_type",
+   "level": "rural",
+   "n": 405,
+   "mae": 0.8268387471408911,
+   "bias": 0.008300230645390913,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "location_type",
+   "level": "urban",
+   "n": 670,
+   "mae": 0.7792321825549512,
+   "bias": -0.0035629056047858177,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "roofing_type",
+   "level": "concrete_flat",
+   "n": 646,
+   "mae": 0.7685632652504164,
+   "bias": -0.0033445223085181415,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "roofing_type",
+   "level": "concrete_slanted",
+   "n": 414,
+   "mae": 0.7894713504458538,
+   "bias": -0.03421473911881987,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "roofing_type",
+   "level": "sheet",
+   "n": 405,
+   "mae": 0.8060171137667432,
+   "bias": -0.013746622236620898,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "roofing_type",
+   "level": "tiles",
+   "n": 535,
+   "mae": 0.7830990686538021,
+   "bias": 0.028620383027806923,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_method",
+   "level": "basic_coating",
+   "n": 505,
+   "mae": 0.7756213780742945,
+   "bias": 0.03081733719643098,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_method",
+   "level": "sheet",
+   "n": 340,
+   "mae": 0.7942977047904719,
+   "bias": 0.01168860094342798,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_method",
+   "level": "sheet_with_coating",
+   "n": 343,
+   "mae": 0.7536100935339891,
+   "bias": -0.0494318643087934,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_method",
+   "level": "tiles",
+   "n": 413,
+   "mae": 0.8053810878539773,
+   "bias": 0.01502152059635718,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_method",
+   "level": "tiles_with_coating",
+   "n": 399,
+   "mae": 0.791647304058991,
+   "bias": -0.03851272843556751,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_quality",
+   "level": "basic",
+   "n": 566,
+   "mae": 0.8293114422345632,
+   "bias": 0.02164482406964772,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_quality",
+   "level": "high",
+   "n": 587,
+   "mae": 0.7318652594840326,
+   "bias": -0.03189550347729755,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "cool_roofing_quality",
+   "level": "intermediate",
+   "n": 847,
+   "mae": 0.7907116382760067,
+   "bias": -0.00012898509409192178,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "size_band",
+   "level": "small",
+   "n": 747,
+   "mae": 0.7912389007146408,
+   "bias": -0.010790998476867705,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "size_band",
+   "level": "medium",
+   "n": 594,
+   "mae": 0.7808140157077943,
+   "bias": 0.005364329618602558,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "rating",
+   "segment": "size_band",
+   "level": "large",
+   "n": 638,
+   "mae": 0.7866692278684679,
+   "bias": 0.001971748520671666,
+   "accuracy": null,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "location_type",
+   "level": "dense_urban",
+   "n": 300,
+   "mae": null,
+   "bias": -0.012556914821915122,
+   "accuracy": 0.7,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "location_type",
+   "level": "intermediate",
+   "n": 605,
+   "mae": null,
+   "bias": 0.016815870865942217,
+   "accuracy": 0.6462809917355372,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "location_type",
+   "level": "rural",
+   "n": 405,
+   "mae": null,
+   "bias": -0.003222647306669879,
+   "accuracy": 0.745679012345679,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "location_type",
+   "level": "urban",
+   "n": 670,
+   "mae": null,
+   "bias": -0.007556512299288776,
+   "accuracy": 0.6880597014925374,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "roofing_type",
+   "level": "concrete_flat",
+   "n": 646,
+   "mae": null,
+   "bias": -0.010146266370120727,
+   "accuracy": 0.6965944272445821,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "roofing_type",
+   "level": "concrete_slanted",
+   "n": 414,
+   "mae": null,
+   "bias": -0.0022283218448267417,
+   "accuracy": 0.6545893719806763,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "roofing_type",
+   "level": "sheet",
+   "n": 405,
+   "mae": null,
+   "bias": -0.013034443350608493,
+   "accuracy": 0.6469135802469136,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "roofing_type",
+   "level": "tiles",
+   "n": 535,
+   "mae": null,
+   "bias": 0.024900302807716435,
+   "accuracy": 0.7383177570093458,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_method",
+   "level": "basic_coating",
+   "n": 505,
+   "mae": null,
+   "bias": 0.02429439964902763,
+   "accuracy": 0.7247524752475247,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_method",
+   "level": "sheet",
+   "n": 340,
+   "mae": null,
+   "bias": 0.005820353603200545,
+   "accuracy": 0.6411764705882353,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_method",
+   "level": "sheet_with_coating",
+   "n": 343,
+   "mae": null,
+   "bias": -0.03322644174921108,
+   "accuracy": 0.6618075801749271,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_method",
+   "level": "tiles",
+   "n": 413,
+   "mae": null,
+   "bias": 0.020010331493373,
+   "accuracy": 0.6949152542372882,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_method",
+   "level": "tiles_with_coating",
+   "n": 399,
+   "mae": null,
+   "bias": -0.0264398253342234,
+   "accuracy": 0.7017543859649122,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_quality",
+   "level": "basic",
+   "n": 566,
+   "mae": null,
+   "bias": 0.02235159995442232,
+   "accuracy": 0.7226148409893993,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_quality",
+   "level": "high",
+   "n": 587,
+   "mae": null,
+   "bias": -0.02230300149543507,
+   "accuracy": 0.6780238500851788,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "cool_roofing_quality",
+   "level": "intermediate",
+   "n": 847,
+   "mae": null,
+   "bias": 0.0011883771309243452,
+   "accuracy": 0.6741440377804014,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "size_band",
+   "level": "small",
+   "n": 747,
+   "mae": null,
+   "bias": 0.0036779216089464217,
+   "accuracy": 0.7095046854082999,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "size_band",
+   "level": "medium",
+   "n": 594,
+   "mae": null,
+   "bias": -0.0028438070869525878,
+   "accuracy": 0.6835016835016835,
+   "small_sample": false
+  },
+  {
+   "task": "high_rating",
+   "segment": "size_band",
+   "level": "large",
+   "n": 638,
+   "mae": null,
+   "bias": 0.0034073205401942697,
+   "accuracy": 0.670846394984326,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "location_type",
+   "level": "dense_urban",
+   "n": 300,
+   "mae": null,
+   "bias": -0.003122672932740822,
+   "accuracy": 0.5033333333333333,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "location_type",
+   "level": "intermediate",
+   "n": 605,
+   "mae": null,
+   "bias": 0.0016603193055965693,
+   "accuracy": 0.4826446280991736,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "location_type",
+   "level": "rural",
+   "n": 405,
+   "mae": null,
+   "bias": 0.006836616394442302,
+   "accuracy": 0.725925925925926,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "location_type",
+   "level": "urban",
+   "n": 670,
+   "mae": null,
+   "bias": -0.0012799494276023449,
+   "accuracy": 0.4373134328358209,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "roofing_type",
+   "level": "concrete_flat",
+   "n": 646,
+   "mae": null,
+   "bias": 0.000890482436208706,
+   "accuracy": 0.4891640866873065,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "roofing_type",
+   "level": "concrete_slanted",
+   "n": 414,
+   "mae": null,
+   "bias": -0.0008225731571561701,
+   "accuracy": 0.49516908212560384,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "roofing_type",
+   "level": "sheet",
+   "n": 405,
+   "mae": null,
+   "bias": 0.0038906391894795167,
+   "accuracy": 0.5308641975308642,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "roofing_type",
+   "level": "tiles",
+   "n": 535,
+   "mae": null,
+   "bias": -0.0011935218642828427,
+   "accuracy": 0.5719626168224299,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_method",
+   "level": "basic_coating",
+   "n": 505,
+   "mae": null,
+   "bias": 0.010040977266544238,
+   "accuracy": 0.5702970297029702,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_method",
+   "level": "sheet",
+   "n": 340,
+   "mae": null,
+   "bias": 0.0009017997972053937,
+   "accuracy": 0.4852941176470588,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_method",
+   "level": "sheet_with_coating",
+   "n": 343,
+   "mae": null,
+   "bias": -0.010784895601100297,
+   "accuracy": 0.4956268221574344,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_method",
+   "level": "tiles",
+   "n": 413,
+   "mae": null,
+   "bias": 0.00799241395149164,
+   "accuracy": 0.5012106537530266,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_method",
+   "level": "tiles_with_coating",
+   "n": 399,
+   "mae": null,
+   "bias": -0.009541534286634956,
+   "accuracy": 0.531328320802005,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_quality",
+   "level": "basic",
+   "n": 566,
+   "mae": null,
+   "bias": 0.005500260278730795,
+   "accuracy": 0.5918727915194346,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_quality",
+   "level": "high",
+   "n": 587,
+   "mae": null,
+   "bias": -0.004331269744706545,
+   "accuracy": 0.4735945485519591,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "cool_roofing_quality",
+   "level": "intermediate",
+   "n": 847,
+   "mae": null,
+   "bias": 0.0007097863795244019,
+   "accuracy": 0.5064935064935064,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "size_band",
+   "level": "small",
+   "n": 747,
+   "mae": null,
+   "bias": 0.00553850022690322,
+   "accuracy": 0.5327978580990629,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "size_band",
+   "level": "medium",
+   "n": 594,
+   "mae": null,
+   "bias": 0.001562350874985352,
+   "accuracy": 0.5269360269360269,
+   "small_sample": false
+  },
+  {
+   "task": "referral",
+   "segment": "size_band",
+   "level": "large",
+   "n": 638,
+   "mae": null,
+   "bias": -0.006173109980236902,
+   "accuracy": 0.5078369905956113,
+   "small_sample": false
+  }
+ ],
+ "predictability_ceiling": {
+  "note": "DIAGNOSTIC ONLY - realised post-installation values are unavailable at quote time and are never used by any model.",
+  "n": 1914,
+  "referral_auc": {
+   "from_realised_savings_and_temperature_drop": 0.6788029525032093,
+   "from_realised_rating": 0.7733561546141776,
+   "from_realised_rating_savings_drop": 0.7824638663053298
+  },
+  "high_rating_auc": {
+   "from_realised_savings_and_temperature_drop": 0.7892386040141085
+  }
+ },
+ "observed_segments": {
+  "ac_group": [
+   {
+    "level": "0 AC",
+    "n": 733,
+    "mean_units_saved": -0.009749303621169917,
+    "mean_rating": 2.422919508867667,
+    "high_rating_rate": 0.165075034106412,
+    "high_rating_ci95": [
+     0.13995830000911252,
+     0.193684100202819
+    ],
+    "referral_rate": 0.21145975443383355,
+    "referral_ci95": [
+     0.183441167580659,
+     0.2424870101986629
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "1 AC",
+    "n": 957,
+    "mean_units_saved": 40.640127388535035,
+    "mean_rating": 3.5621734587251828,
+    "high_rating_rate": 0.5339602925809822,
+    "high_rating_ci95": [
+     0.5022817214315003,
+     0.5653673062542286
+    ],
+    "referral_rate": 0.4158829676071055,
+    "referral_ci95": [
+     0.3850525710209084,
+     0.4473859911729018
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "2 AC",
+    "n": 509,
+    "mean_units_saved": 83.32862903225806,
+    "mean_rating": 3.56188605108055,
+    "high_rating_rate": 0.5363457760314342,
+    "high_rating_ci95": [
+     0.49291240405115494,
+     0.5792346292628353
+    ],
+    "referral_rate": 0.45579567779960706,
+    "referral_ci95": [
+     0.41302024508813345,
+     0.49923336304350013
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "3 AC",
+    "n": 270,
+    "mean_units_saved": 120.5433962264151,
+    "mean_rating": 3.522222222222222,
+    "high_rating_rate": 0.5222222222222223,
+    "high_rating_ci95": [
+     0.4627470887112816,
+     0.5810738647158091
+    ],
+    "referral_rate": 0.4148148148148148,
+    "referral_ci95": [
+     0.357642325380881,
+     0.4743773531486047
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "unknown",
+    "n": 31,
+    "mean_units_saved": 46.41935483870968,
+    "mean_rating": 3.129032258064516,
+    "high_rating_rate": 0.45161290322580644,
+    "high_rating_ci95": [
+     0.29161482836586106,
+     0.6222812039633085
+    ],
+    "referral_rate": 0.22580645161290322,
+    "referral_ci95": [
+     0.11394991594498799,
+     0.3981276005869738
+    ],
+    "small_sample": false
+   }
+  ],
+  "usage_band": [
+   {
+    "level": "\u226425 kWh",
+    "n": 632,
+    "mean_units_saved": 0.11464968152866242,
+    "mean_rating": 2.4177215189873418,
+    "high_rating_rate": 0.15981012658227847,
+    "high_rating_ci95": [
+     0.13330927724579414,
+     0.19042166454851436
+    ],
+    "referral_rate": 0.20411392405063292,
+    "referral_ci95": [
+     0.17452186135278216,
+     0.2372813298822676
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "26\u201375 kWh",
+    "n": 592,
+    "mean_units_saved": 22.561016949152542,
+    "mean_rating": 3.2212837837837838,
+    "high_rating_rate": 0.43074324324324326,
+    "high_rating_ci95": [
+     0.3914265611396125,
+     0.4709529706017094
+    ],
+    "referral_rate": 0.3158783783783784,
+    "referral_ci95": [
+     0.2797201032686299,
+     0.35441084697049413
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "76\u2013150 kWh",
+    "n": 774,
+    "mean_units_saved": 55.99738903394256,
+    "mean_rating": 3.546511627906977,
+    "high_rating_rate": 0.5284237726098191,
+    "high_rating_ci95": [
+     0.4932016562362893,
+     0.5633651306262286
+    ],
+    "referral_rate": 0.43410852713178294,
+    "referral_ci95": [
+     0.39960060710207745,
+     0.46926729608026707
+    ],
+    "small_sample": false
+   },
+   {
+    "level": ">150 kWh",
+    "n": 476,
+    "mean_units_saved": 121.18162393162393,
+    "mean_rating": 3.745798319327731,
+    "high_rating_rate": 0.5966386554621849,
+    "high_rating_ci95": [
+     0.5519636661044296,
+     0.6397662714416272
+    ],
+    "referral_rate": 0.5084033613445378,
+    "referral_ci95": [
+     0.4636042946648759,
+     0.5530678738173898
+    ],
+    "small_sample": false
+   }
+  ],
+  "location_type": [
+   {
+    "level": "dense_urban",
+    "n": 383,
+    "mean_units_saved": 77.88555858310627,
+    "mean_rating": 3.681462140992167,
+    "high_rating_rate": 0.5718015665796344,
+    "high_rating_ci95": [
+     0.5217734082093948,
+     0.6204036482395496
+    ],
+    "referral_rate": 0.4960835509138381,
+    "referral_ci95": [
+     0.44629755957452943,
+     0.5459473282555282
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "intermediate",
+    "n": 745,
+    "mean_units_saved": 36.29387755102041,
+    "mean_rating": 3.0483221476510067,
+    "high_rating_rate": 0.3516778523489933,
+    "high_rating_ci95": [
+     0.3182300598980177,
+     0.38664744690715974
+    ],
+    "referral_rate": 0.3087248322147651,
+    "referral_ci95": [
+     0.2766033983923539,
+     0.3428087710170379
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "rural",
+    "n": 513,
+    "mean_units_saved": 24.211155378486055,
+    "mean_rating": 2.7992202729044835,
+    "high_rating_rate": 0.3235867446393762,
+    "high_rating_ci95": [
+     0.2845419944768929,
+     0.36525399717702955
+    ],
+    "referral_rate": 0.22807017543859648,
+    "referral_ci95": [
+     0.1938606328807182,
+     0.26632213878472044
+    ],
+    "small_sample": false
+   },
+   {
+    "level": "urban",
+    "n": 835,
+    "mean_units_saved": 53.976941747572816,
+    "mean_rating": 3.4095808383233535,
+    "high_rating_rate": 0.481437125748503,
+    "high_rating_ci95": [
+     0.44770880562342713,
+     0.515335468766398
+    ],
+    "referral_rate": 0.4251497005988024,
+    "referral_ci95": [
+     0.3920354724700354,
+     0.45894950490829206
+    ],
+    "small_sample": false
+   }
+  ]
+ },
+ "min_segment_n": 30
+}

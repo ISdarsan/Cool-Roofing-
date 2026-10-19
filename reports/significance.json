@@ -1,0 +1,140 @@
+{
+ "cost": {
+  "kind": "regression",
+  "n": 493,
+  "baseline_rule": "training mean",
+  "mae": 25299.374993189773,
+  "mae_ci95": [
+   22794.94200446269,
+   27941.410868170144
+  ],
+  "baseline_mae": 637024.1206091958,
+  "mae_improvement": 611693.8265000582,
+  "mae_improvement_ci95": [
+   567175.5343327405,
+   659757.6906349672
+  ],
+  "verdict": "better"
+ },
+ "temperature_drop": {
+  "kind": "regression",
+  "n": 486,
+  "baseline_rule": "training mean",
+  "mae": 0.413911708724423,
+  "mae_ci95": [
+   0.3859039769249095,
+   0.44156390301626075
+  ],
+  "baseline_mae": 1.7967611317293208,
+  "mae_improvement": 1.3851774634981864,
+  "mae_improvement_ci95": [
+   1.2712836888441856,
+   1.5044418448896115
+  ],
+  "verdict": "better"
+ },
+ "units_saved": {
+  "kind": "regression",
+  "n": 494,
+  "baseline_rule": "training mean",
+  "mae": 3.6169681735626447,
+  "mae_ci95": [
+   3.2205493646737495,
+   4.012567714623771
+  ],
+  "baseline_mae": 38.35401529280891,
+  "mae_improvement": 34.696638682144794,
+  "mae_improvement_ci95": [
+   31.746040456762664,
+   37.627644249573294
+  ],
+  "verdict": "better"
+ },
+ "rating": {
+  "kind": "regression",
+  "n": 500,
+  "baseline_rule": "training median",
+  "mae": 0.7689869553214228,
+  "mae_ci95": [
+   0.7263299689811884,
+   0.8141682687087367
+  ],
+  "baseline_mae": 0.924,
+  "mae_improvement": 0.15396163980283956,
+  "mae_improvement_ci95": [
+   0.09698883157515487,
+   0.2114401090533538
+  ],
+  "verdict": "better"
+ },
+ "high_rating": {
+  "kind": "classification",
+  "n": 500,
+  "threshold": 0.5,
+  "accuracy_baseline_rule": "majority class of the training pool (= 0)",
+  "accuracy": 0.688,
+  "accuracy_ci95": [
+   0.646,
+   0.728
+  ],
+  "baseline_accuracy": 0.576,
+  "accuracy_improvement": 0.11199999999999999,
+  "accuracy_improvement_ci95": [
+   0.05600000000000005,
+   0.16599999999999993
+  ],
+  "accuracy_verdict": "better",
+  "f1_baseline_rule": "predict every customer positive",
+  "f1_ci95": [
+   0.5570291777188329,
+   0.6696837732815222
+  ],
+  "baseline_f1": 0.5955056179775281,
+  "f1_improvement_ci95": [
+   -0.04134735145434077,
+   0.07672676785489431
+  ],
+  "f1_verdict": "not_distinguishable",
+  "roc_auc": 0.7551018736897274,
+  "roc_auc_ci95": [
+   0.7124017341114923,
+   0.7954664552288749
+  ],
+  "auc_above_chance": true
+ },
+ "referral": {
+  "kind": "classification",
+  "n": 500,
+  "threshold": 0.25,
+  "accuracy_baseline_rule": "majority class of the training pool (= 0)",
+  "accuracy": 0.512,
+  "accuracy_ci95": [
+   0.468,
+   0.5580499999999998
+  ],
+  "baseline_accuracy": 0.626,
+  "accuracy_improvement": -0.11399999999999999,
+  "accuracy_improvement_ci95": [
+   -0.19000000000000006,
+   -0.03799999999999992
+  ],
+  "accuracy_verdict": "worse",
+  "f1_baseline_rule": "predict every customer positive",
+  "f1_ci95": [
+   0.5175600739371534,
+   0.6164389559292758
+  ],
+  "baseline_f1": 0.5443959243085881,
+  "f1_improvement_ci95": [
+   -0.00482855628902786,
+   0.052912737061120325
+  ],
+  "f1_verdict": "not_distinguishable",
+  "roc_auc": 0.6554817105465481,
+  "roc_auc_ci95": [
+   0.6059088530199547,
+   0.7029158424638444
+  ],
+  "auc_above_chance": true
+ }
+}

@@ -1,0 +1,137 @@
+# Independent audit of the raw CSV (scripts/audit_raw_data.py)
+SHA256 f72b8409df4430ec | archived copy identical: True
+
+== 1. DOCUMENTS vs DATA ==
+problem statement says 2,500 records: True | actual rows: 2500
+approach.md column list == CSV columns (same order): True | n = 15
+statement says monthly electricity consumption (kWh): True
+statement gives rating scale 1-5: True | defines 'high rating' numerically: False
+statement gives building_size unit: False | gives electricity tariff: False
+
+== 2. SCHEMA ==
+                               dtype  non_null  missing  n_unique
+building_id                    int64      2500        0      2500
+location_type                 object      2476       24         4
+building_size                float64      2472       28        28
+building_age                 float64      2477       23        50
+cool_roofing_quality          object      2500        0         3
+roofing_type                  object      2500        0         4
+cool_roofing_method           object      2500        0         5
+cool_roofing_cost              int64      2500        0      2372
+avg_roof_temperature_before  float64      2500        0      1144
+num_ac_units                 float64      2469       31         4
+avg_units_before               int64      2500        0       336
+avg_roof_temperature_after   float64      2500        0      1069
+avg_units_after                int64      2500        0       189
+customer_given_rating          int64      2500        0         5
+customer_referral               bool      2500        0         2
+shape (2500, 15) | duplicate rows 0 | duplicate ids 0 | ids == 1..N True | dup rows ignoring id 0
+location_type: {'urban': 835, 'intermediate': 745, 'rural': 513, 'dense_urban': 383} | whitespace/case issues: 0
+cool_roofing_quality: {'intermediate': 1042, 'high': 748, 'basic': 710} | whitespace/case issues: 0
+roofing_type: {'concrete_flat': 795, 'tiles': 674, 'concrete_slanted': 528, 'sheet': 503} | whitespace/case issues: 0
+cool_roofing_method: {'basic_coating': 641, 'tiles': 518, 'tiles_with_coating': 499, 'sheet_with_coating': 426, 'sheet': 416} | whitespace/case issues: 0
+customer_referral values: {False: 1596, True: 904} | dtype bool
+integer checks: rating non-int 0 | ac non-int 0 | age non-int 0
+                              count       min        25%        50%         75%        max        mean        std
+building_size                2472.0    300.00    1000.00    1300.00     1800.00     3000.0     1419.38     567.45
+building_age                 2477.0      1.00      13.00      26.00       38.00       50.0       25.39      14.39
+cool_roofing_cost            2500.0  55300.00  502475.00  860900.00  1476450.00  5046600.0  1093520.20  808102.26
+avg_roof_temperature_before  2500.0     22.98      30.34      33.06       35.43      120.0       33.93      10.40
+num_ac_units                 2469.0      0.00       0.00       1.00        2.00        3.0        1.13       0.96
+avg_units_before             2500.0      0.00      24.00      75.50      129.00      500.0       91.81      80.42
+avg_roof_temperature_after   2500.0     17.81      24.63      26.91       29.04      120.0       27.81       9.94
+avg_units_after              2500.0      0.00      19.00      35.00       61.00      311.0       46.02      38.95
+customer_given_rating        2500.0      1.00       2.00       3.00        4.00        5.0        3.22       1.15
+
+== 3. RAW TARGET DISTRIBUTIONS (before any cleaning) ==
+cool_roofing_cost: min 55300.0 p1 115777.0 median 860900.0 p99 3677017.0 max 5046600.0 skew 1.35
+temperature_drop: min -93.1 p1 -80.7 median 5.6 p99 91.2 max 100.4 skew -0.04
+units_saved: min -113.0 p1 -6.0 median 36.0 p99 215.0 max 297.0 skew 1.39
+rating counts {1: 197, 2: 487, 3: 756, 4: 693, 5: 367} | P(rating>=4)=0.424
+referral rate 0.362 | referral rate by rating: {1: 0.051, 2: 0.109, 3: 0.262, 4: 0.511, 5: 0.787}
+
+== 4. MISSINGNESS ==
+per column: {'location_type': 24, 'building_size': 28, 'building_age': 23, 'num_ac_units': 31} | rows with any: 106 | rows with >1 missing: 0
+outcomes when the field is missing vs present (cost | rating | referral rate):
+  location_type  n_missing= 24 cost  1,250,200 vs  1,092,001 | rating 3.42 vs 3.22 | referral 0.50 vs 0.36
+  building_size  n_missing= 28 cost    827,482 vs  1,096,534 | rating 3.57 vs 3.21 | referral 0.39 vs 0.36
+  building_age   n_missing= 23 cost  1,000,078 vs  1,094,388 | rating 3.43 vs 3.22 | referral 0.39 vs 0.36
+  num_ac_units   n_missing= 31 cost  1,050,923 vs  1,094,055 | rating 3.13 vs 3.22 | referral 0.23 vs 0.36
+
+== 5. ANOMALOUS RECORDS ==
+avg_roof_temperature_before: most repeated value 120.0 x32 (next most repeated x8) | max excluding it 40.93 | min 22.98
+avg_roof_temperature_after: most repeated value 120.0 x26 (next most repeated x8) | max excluding it 36.00 | min 17.81
+  120.0 rows: before 32 after 26 both 0 | implied temperature_drop on those rows: -93.1..100.4
+  valid-row temperature_drop: min 2.10 max 13.51 | roof hotter after (drop<=0) among valid rows: 0
+avg_units_before: counts of values <= 8 -> {0: 26, 4: 2, 5: 13, 6: 15, 7: 18, 8: 23}
+avg_units_after: counts of values <= 8 -> {0: 22, 4: 2, 5: 15, 6: 15, 7: 26, 8: 22}
+  zero before: 26 (max units_after on those rows: 113; with >=1 AC: 16)
+  zero after : 22 (units_before on those rows: min 14 median 110 max 273; after/before ratio is 0 vs smallest valid ratio 0.078) | both zero: 0
+  negative savings (after>before): 193 rows; excluding zero-before rows: 167; zero-AC among them: 175; median units_before 16; max units_before 53; savings exactly 0: 404
+  mean saved-fraction by usage band (valid rows): {Interval(0, 10, closed='right'): -0.007, Interval(10, 25, closed='right'): 0.007, Interval(25, 50, closed='right'): 0.309, Interval(50, 100, closed='right'): 0.499, Interval(100, 600, closed='right'): 0.537}
+  cost: min 55300 max 5046600 non-positive 0 | cost-per-area / (method x quality median): min 0.35 max 2.17 -> beyond 1/3x..3x: 0
+  ranges: size (300.0, 3000.0) age (1.0, 50.0) ac (0.0, 3.0) | rating outside 1-5: 0
+  roof x method crosstab (zero cells = never observed):
+cool_roofing_method  basic_coating  sheet  sheet_with_coating  tiles  tiles_with_coating
+roofing_type                                                                            
+concrete_flat                  143    175                 145    158                 174
+concrete_slanted               104     97                 106    125                  96
+sheet                          184    144                 175      0                   0
+tiles                          210      0                   0    235                 229
+  zero-AC but >150 kWh before: 0
+  spike scan building_size: most repeated value 1000.0 appears 200x
+  spike scan building_age: most repeated value 15.0 appears 62x
+  spike scan cool_roofing_cost: most repeated value 604600 appears 3x
+
+== 6. LEAKAGE-RISK EVIDENCE ==
+corr(cost, building_size)=0.87 | corr(units_saved, units_before)=0.93 | corr(units_saved, units_after)=0.62 | corr(temp_drop, temp_after)=-0.67
+post-install vs rating: corr(rating, units_saved)=0.43 corr(rating, temp_drop)=0.06 corr(rating, cost)=0.20
+P(referral | rating>=4)=0.61 vs P(referral | rating<=2)=0.09
+building_id vs targets (corr): cost -0.019 rating -0.003 referral 0.028
+
+# Cross-check against the cleaning pipeline (scripts/audit_crosscheck.py)
+== A. Is missingness informative? (two-sided tests vs rows where the field is present) ==
+  location_type  n=24  p(rating)=0.389  p(referral)=0.199  p(cost)=0.328
+  building_size  n=28  p(rating)=0.095  p(referral)=0.698  p(cost)=0.089
+  building_age   n=23  p(rating)=0.334  p(referral)=0.828  p(cost)=0.523
+  num_ac_units   n=31  p(rating)=0.748  p(referral)=0.134  p(cost)=0.947
+  (with 4 fields x 3 outcomes = 12 tests, a Bonferroni threshold is 0.05/12 = 0.004)
+  building_size missing: median cost 672150 vs 863450; median size-driven cost/area ratio unaffected? cost per area on observed rows only
+
+== B. Cross-check: independent audit vs cleaning pipeline ==
+  OK  rows                                             independent= 2500 pipeline= 2500
+  OK  temp 120 before                                  independent=   32 pipeline=   32
+  OK  temp 120 after                                   independent=   26 pipeline=   26
+  OK  0 kWh before                                     independent=   26 pipeline=   26
+  OK  0 kWh after                                      independent=   22 pipeline=   22
+  OK  missing size                                     independent=   28 pipeline=   28
+  OK  missing cells (4 fields)                         independent=  106 pipeline=  106
+  OK  negative savings kept (after>before, before>0)   independent=  167 pipeline=  167
+  ALL CROSS-CHECKS AGREE: True
+
+== C. Cleaning decisions: audit trail (from reports/cleaning_audit.csv) ==
+                               check classification                                                                                                                    action  records
+                       missing_value        missing excluded from cost task (size is the dominant cost driver, imputing it would inject label noise); imputed for other tasks       28
+                       missing_value        missing                                                            kept; imputed with training-fold statistic + missing-indicator       78
+                    negative_savings  valid_adverse                                                                                   kept as a genuine (undesirable) outcome      167
+temperature_sentinel_or_out_of_range        invalid                                      set to missing (true value cannot be recovered); excluded from temperature-drop task       26
+temperature_sentinel_or_out_of_range        invalid         set to missing (true value cannot be recovered); feature imputed in pipeline; excluded from temperature-drop task       32
+        zero_consumption_placeholder        invalid        set to missing (true value cannot be recovered); feature imputed in pipeline; units_saved task excludes the record       26
+        zero_consumption_placeholder        invalid                                     set to missing (true value cannot be recovered); units_saved task excludes the record       22
+  records deleted outright from the dataset: 0 (cleaning only sets invalid VALUES to missing; eligibility is decided per task)
+  raw file unchanged, cleaned output rows: 2500
+
+== D. Task-specific sample counts (eligible / excluded, then train+val vs hold-out) ==
+            task  usable  excluded  train+val  hold-out       class balance
+            cost    2472        28       1979       493                    
+temperature_drop    2442        58       1956       486                    
+     units_saved    2452        48       1958       494                    
+          rating    2500         0       2000       500                    
+     high_rating    2500         0       2000       500 positive rate 0.424
+        referral    2500         0       2000       500 positive rate 0.362
+  hold-out = 500 buildings fixed before modelling (seed 42, stratified on rating); rows excluded from every task: 0
+  rows with at least one missing/invalidated INPUT after cleaning: 164 (imputed inside training folds only)
+
+== E. Feature contract ==
+  allowed inputs: ['location_type', 'building_size', 'building_age', 'roofing_type', 'cool_roofing_quality', 'cool_roofing_method', 'avg_roof_temperature_before', 'num_ac_units', 'avg_units_before']
+  forbidden: ['building_id', 'cool_roofing_cost', 'avg_roof_temperature_after', 'avg_units_after', 'customer_given_rating', 'customer_referral', 'temperature_drop', 'units_saved', 'high_rating']

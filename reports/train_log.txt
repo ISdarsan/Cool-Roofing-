@@ -1,0 +1,60 @@
+
+=== Installation cost [cost]  train+val=1979  test=493 ===
+  dummy_mean               cv_mae=625916.6291  cv_rmse=806345.7873  cv_r2=-0.0014  cv_mae_fold_std=8304.9629
+  linear                   cv_mae=150036.4583  cv_rmse=218456.5165  cv_r2=0.9265  cv_mae_fold_std=2367.1848
+  loglinear_ridge          cv_mae=25703.0565  cv_rmse=44039.7617  cv_r2=0.9970  cv_mae_fold_std=1306.9896
+  random_forest            cv_mae=91836.4923  cv_rmse=157559.2151  cv_r2=0.9618  cv_mae_fold_std=7920.0683
+  lightgbm                 cv_mae=40142.9477  cv_rmse=70734.1086  cv_r2=0.9923  cv_mae_fold_std=1985.2998
+  lightgbm_log             cv_mae=34810.7990  cv_rmse=61013.9122  cv_r2=0.9943  cv_mae_fold_std=2219.3183
+  ratio_lightgbm           cv_mae=34568.4201  cv_rmse=59141.7671  cv_r2=0.9946  cv_mae_fold_std=2292.5780
+  -> selected: loglinear_ridge   (baseline: dummy_mean)
+  test: mae=25299.3750, rmse=38515.2890   | baseline: mae=637024.1206, rmse=823818.2459
+
+=== Roof temperature drop [temperature_drop]  train+val=1956  test=486 ===
+  dummy_mean               cv_mae=1.7042  cv_rmse=2.1220  cv_r2=-0.0011  cv_mae_fold_std=0.0524
+  linear                   cv_mae=0.5083  cv_rmse=0.6485  cv_r2=0.9065  cv_mae_fold_std=0.0148
+  poly2_ridge              cv_mae=0.4428  cv_rmse=0.5671  cv_r2=0.9285  cv_mae_fold_std=0.0177
+  random_forest            cv_mae=0.4332  cv_rmse=0.5454  cv_r2=0.9339  cv_mae_fold_std=0.0138
+  lightgbm                 cv_mae=0.4211  cv_rmse=0.5270  cv_r2=0.9383  cv_mae_fold_std=0.0087
+  ratio_lightgbm           cv_mae=0.4124  cv_rmse=0.5181  cv_r2=0.9403  cv_mae_fold_std=0.0107
+  -> selected: ratio_lightgbm   (baseline: dummy_mean)
+  test: mae=0.4139, rmse=0.5116   | baseline: mae=1.7968, rmse=2.2385
+
+=== Monthly electricity saved [units_saved]  train+val=1958  test=494 ===
+  dummy_mean               cv_mae=36.8060  cv_rmse=48.1912  cv_r2=-0.0005  cv_mae_fold_std=1.9066
+  linear                   cv_mae=8.3240  cv_rmse=12.1777  cv_r2=0.9361  cv_mae_fold_std=0.3505
+  poly2_ridge              cv_mae=3.8646  cv_rmse=5.8478  cv_r2=0.9853  cv_mae_fold_std=0.1720
+  random_forest            cv_mae=5.1272  cv_rmse=9.1160  cv_r2=0.9642  cv_mae_fold_std=0.1752
+  lightgbm                 cv_mae=3.8282  cv_rmse=6.5323  cv_r2=0.9816  cv_mae_fold_std=0.1819
+  ratio_lightgbm           cv_mae=3.3127  cv_rmse=5.3065  cv_r2=0.9879  cv_mae_fold_std=0.1444
+  -> selected: ratio_lightgbm   (baseline: dummy_mean)
+  test: mae=3.6170, rmse=5.8702   | baseline: mae=38.3540, rmse=51.0485
+
+=== Customer rating (1-5) [rating]  train+val=2000  test=500 ===
+  dummy_mean               cv_mae=0.9567  cv_rmse=1.1519  cv_r2=-0.0007  cv_mae_fold_std=0.0264  cv_mae_rounded=0.9230
+  dummy_median             cv_mae=0.9230  cv_rmse=1.1722  cv_r2=-0.0362  cv_mae_fold_std=0.0371  cv_mae_rounded=0.9230
+  linear                   cv_mae=0.8157  cv_rmse=0.9701  cv_r2=0.2904  cv_mae_fold_std=0.0291  cv_mae_rounded=0.7885
+  random_forest            cv_mae=0.7876  cv_rmse=0.9329  cv_r2=0.3437  cv_mae_fold_std=0.0368  cv_mae_rounded=0.7630
+  lightgbm                 cv_mae=0.7844  cv_rmse=0.9300  cv_r2=0.3478  cv_mae_fold_std=0.0356  cv_mae_rounded=0.7525
+  lightgbm_l1              cv_mae=0.7849  cv_rmse=0.9404  cv_r2=0.3330  cv_mae_fold_std=0.0335  cv_mae_rounded=0.7605
+  -> selected: lightgbm   (baseline: dummy_median)
+  test: mae=0.7690, rmse=0.9220   | baseline: mae=0.9240, rmse=1.1730
+
+=== High rating (>= threshold) [high_rating]  train+val=2000  test=500 ===
+  dummy_prior              cv_accuracy=0.5760  cv_f1=0.0000  cv_log_loss=0.6816  cv_brier=0.2442  cv_roc_auc=0.4988  cv_best_f1=0.5955  cv_f1_threshold=0.0500  cv_accuracy_at_f1_threshold=0.4240
+  logistic                 cv_accuracy=0.6640  cv_f1=0.5692  cv_log_loss=0.5875  cv_brier=0.2020  cv_roc_auc=0.7448  cv_best_f1=0.6767  cv_f1_threshold=0.3400  cv_accuracy_at_f1_threshold=0.6665
+  random_forest            cv_accuracy=0.6830  cv_f1=0.6129  cv_log_loss=0.5721  cv_brier=0.1966  cv_roc_auc=0.7560  cv_best_f1=0.6738  cv_f1_threshold=0.3300  cv_accuracy_at_f1_threshold=0.6485
+  lightgbm                 cv_accuracy=0.6890  cv_f1=0.6189  cv_log_loss=0.5639  cv_brier=0.1928  cv_roc_auc=0.7671  cv_best_f1=0.6792  cv_f1_threshold=0.3200  cv_accuracy_at_f1_threshold=0.6495
+  -> selected: lightgbm   (baseline: dummy_prior)
+  test: accuracy=0.6880, f1=0.6139   | baseline: accuracy=0.5760, f1=0.0000
+
+=== Customer referral [referral]  train+val=2000  test=500 ===
+  dummy_prior              cv_accuracy=0.6415  cv_f1=0.0000  cv_log_loss=0.6526  cv_brier=0.2300  cv_roc_auc=0.4987  cv_best_f1=0.5278  cv_f1_threshold=0.0500  cv_accuracy_at_f1_threshold=0.3585
+  dummy_always_positive    cv_accuracy=0.3585  cv_f1=0.5278  cv_log_loss=8.8627  cv_brier=0.6415  cv_roc_auc=0.5000  cv_best_f1=0.5278  cv_f1_threshold=0.0500  cv_accuracy_at_f1_threshold=0.3585
+  logistic                 cv_accuracy=0.6515  cv_f1=0.3552  cv_log_loss=0.6154  cv_brier=0.2140  cv_roc_auc=0.6586  cv_best_f1=0.5665  cv_f1_threshold=0.2500  cv_accuracy_at_f1_threshold=0.5210
+  random_forest            cv_accuracy=0.6635  cv_f1=0.3942  cv_log_loss=0.6203  cv_brier=0.2162  cv_roc_auc=0.6474  cv_best_f1=0.5583  cv_f1_threshold=0.1800  cv_accuracy_at_f1_threshold=0.4605
+  lightgbm                 cv_accuracy=0.6670  cv_f1=0.3752  cv_log_loss=0.6109  cv_brier=0.2120  cv_roc_auc=0.6673  cv_best_f1=0.5661  cv_f1_threshold=0.2700  cv_accuracy_at_f1_threshold=0.5355
+  -> selected: logistic   (baseline: dummy_always_positive)
+  test: accuracy=0.5120, f1=0.5689   | baseline: accuracy=0.3740, f1=0.5444
+
+saved models -> D:\bia hackathon\models

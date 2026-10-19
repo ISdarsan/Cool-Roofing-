@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens — "reflective roof": warm Indian daylight (sand, sun)
+   over cool architectural surfaces (teal, mist). Text pairs verified
+   >= 4.5:1 against their backgrounds in both themes.
+   ------------------------------------------------------------------ */
+:root {
+  --bg: #f6f2e9;
+  --surface: #ffffff;
+  --surface-2: #eef4f4;
+  --ink: #14262b;
+  --muted: #475a5f;
+  --line: #d6e0e0;
+  --primary: #0b6e78;
+  --primary-hover: #095c65;
+  --on-primary: #ffffff;
+  --primary-soft: #d9edef;
+  --sun: #e8a33d;
+  --sun-soft: #fbebcf;
+  --on-sun: #14262b;
+  --clay: #b0412c;
+  --clay-soft: #f8dfd8;
+  --good: #2c7a4b;
+  --good-soft: #d9efe0;
+  --warn-ink: #7a4a00;
+  --shadow: 0 1px 2px rgb(20 38 43 / 0.06), 0 8px 24px -12px rgb(20 38 43 / 0.18);
+
+  /* chart palette (colour-blind-safe set; every series is also labelled directly) */
+  --c1: #0b6e78;
+  --c2: #e8a33d;
+  --c3: #b0412c;
+  --c4: #4c6a9c;
+  --c5: #6e9a6f;
+  --c-ink: #14262b;
+  --grid: #dfe7e7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d191c;
+    --surface: #142226;
+    --surface-2: #1a2c31;
+    --ink: #e8f0f0;
+    --muted: #a3b6ba;
+    --line: #28393e;
+    --primary: #45b8c3;
+    --primary-hover: #66c8d1;
+    --on-primary: #06242a;
+    --primary-soft: #153a40;
+    --sun: #f0b24f;
+    --sun-soft: #3b2e14;
+    --on-sun: #14262b;
+    --clay: #ee8f79;
+    --clay-soft: #3d2019;
+    --good: #6fcf94;
+    --good-soft: #17352a;
+    --warn-ink: #f0c36f;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+    --c1: #45b8c3;
+    --c2: #f0b24f;
+    --c3: #ee8f79;
+    --c4: #8aa8dc;
+    --c5: #8fc490;
+    --c-ink: #e8f0f0;
+    --grid: #263a3f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d191c;
+  --surface: #142226;
+  --surface-2: #1a2c31;
+  --ink: #e8f0f0;
+  --muted: #a3b6ba;
+  --line: #28393e;
+  --primary: #45b8c3;
+  --primary-hover: #66c8d1;
+  --on-primary: #06242a;
+  --primary-soft: #153a40;
+  --sun: #f0b24f;
+  --sun-soft: #3b2e14;
+  --on-sun: #14262b;
+  --clay: #ee8f79;
+  --clay-soft: #3d2019;
+  --good: #6fcf94;
+  --good-soft: #17352a;
+  --warn-ink: #f0c36f;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --c1: #45b8c3;
+  --c2: #f0b24f;
+  --c3: #ee8f79;
+  --c4: #8aa8dc;
+  --c5: #8fc490;
+  --c-ink: #e8f0f0;
+  --grid: #263a3f;
+}
+
+@theme inline {
+  --font-sans: "Fira Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-on-sun: var(--on-sun);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-warn-ink: var(--warn-ink);
+  --radius-card: 16px;
+  --shadow-card: var(--shadow);
+}
+
+html { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* soft solar glow behind the page header region */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 320px;
+  background: radial-gradient(60% 100% at 85% 0%, color-mix(in srgb, var(--sun) 16%, transparent), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+.skip-link {
+  position: absolute; left: 8px; top: -60px; z-index: 100; background: var(--primary); color: var(--on-primary);
+  padding: 10px 14px; border-radius: 10px; font-weight: 600;
+}
+.skip-link:focus { top: 8px; }
+
+button, [role="button"], select, summary, label[for], input[type="radio"], input[type="range"] { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+/* tables: horizontal scroll inside the container, never the page */
+.table-wrap { overflow-x: auto; max-width: 100%; }
+
+input[type="range"] { accent-color: var(--primary); }
+
+.recharts-text { fill: var(--muted); font-family: var(--font-sans); }
+.recharts-cartesian-axis-tick-value { fill: var(--muted); }
+.recharts-tooltip-wrapper { outline: none; }
+
+.prose-report h1 { font-size: 1.6rem; font-weight: 700; margin: 0 0 .5rem; }
+.prose-report h2 { font-size: 1.25rem; font-weight: 700; margin: 1.6rem 0 .5rem; color: var(--primary); }
+.prose-report h3 { font-size: 1.05rem; font-weight: 600; margin: 1.2rem 0 .4rem; }
+.prose-report p, .prose-report li { margin: .35rem 0; }
+.prose-report ul { list-style: disc; padding-left: 1.3rem; }
+.prose-report table { border-collapse: collapse; margin: .8rem 0; font-size: .9rem; min-width: 100%; }
+.prose-report th, .prose-report td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; }
+.prose-report th { background: var(--surface-2); }
+.prose-report img { max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); margin: .6rem 0; background: #fff; }
+.prose-report code { font-family: var(--font-mono); font-size: .85em; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+.prose-report em { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

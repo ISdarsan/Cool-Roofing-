@@ -1,0 +1,209 @@
+{
+  "n_raw_rows": 2500,
+  "structural": {
+    "rows": 2500,
+    "columns": 15,
+    "extra_columns": [],
+    "duplicate_rows": 0,
+    "duplicate_building_ids": 0,
+    "duplicate_rows_excluding_id": 0,
+    "id_is_sequential": true,
+    "dtypes": {
+      "building_id": "int64",
+      "location_type": "object",
+      "building_size": "float64",
+      "building_age": "float64",
+      "cool_roofing_quality": "object",
+      "roofing_type": "object",
+      "cool_roofing_method": "object",
+      "cool_roofing_cost": "int64",
+      "avg_roof_temperature_before": "float64",
+      "num_ac_units": "float64",
+      "avg_units_before": "int64",
+      "avg_roof_temperature_after": "float64",
+      "avg_units_after": "int64",
+      "customer_given_rating": "int64",
+      "customer_referral": "bool"
+    },
+    "unexpected_categories": {}
+  },
+  "label_and_type_notes": [
+    {
+      "check": "label_standardisation",
+      "column": "location_type",
+      "n_changed": 0
+    },
+    {
+      "check": "label_standardisation",
+      "column": "roofing_type",
+      "n_changed": 0
+    },
+    {
+      "check": "label_standardisation",
+      "column": "cool_roofing_quality",
+      "n_changed": 0
+    },
+    {
+      "check": "label_standardisation",
+      "column": "cool_roofing_method",
+      "n_changed": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "building_size",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "building_age",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "cool_roofing_cost",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "avg_roof_temperature_before",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "num_ac_units",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "avg_units_before",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "avg_roof_temperature_after",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "avg_units_after",
+      "n_unparseable": 0
+    },
+    {
+      "check": "numeric_coercion",
+      "column": "customer_given_rating",
+      "n_unparseable": 0
+    }
+  ],
+  "missing_before": {
+    "building_id": 0,
+    "location_type": 24,
+    "building_size": 28,
+    "building_age": 23,
+    "cool_roofing_quality": 0,
+    "roofing_type": 0,
+    "cool_roofing_method": 0,
+    "cool_roofing_cost": 0,
+    "avg_roof_temperature_before": 0,
+    "num_ac_units": 31,
+    "avg_units_before": 0,
+    "avg_roof_temperature_after": 0,
+    "avg_units_after": 0,
+    "customer_given_rating": 0,
+    "customer_referral": 0
+  },
+  "missing_after_cleaning": {
+    "building_id": 0,
+    "location_type": 24,
+    "building_size": 28,
+    "building_age": 23,
+    "cool_roofing_quality": 0,
+    "roofing_type": 0,
+    "cool_roofing_method": 0,
+    "cool_roofing_cost": 0,
+    "avg_roof_temperature_before": 32,
+    "num_ac_units": 31,
+    "avg_units_before": 26,
+    "avg_roof_temperature_after": 26,
+    "avg_units_after": 22,
+    "customer_given_rating": 0,
+    "customer_referral": 0
+  },
+  "rows_with_any_missing_feature": 164,
+  "eligible_rows_by_task": {
+    "cost": 2472,
+    "temperature_drop": 2442,
+    "units_saved": 2452,
+    "rating": 2500,
+    "high_rating": 2500,
+    "referral": 2500
+  },
+  "exclusions_by_task": {
+    "cost": {
+      "missing_building_size": 28,
+      "non_positive_cost": 0
+    },
+    "temperature_drop": {
+      "temperature_before_invalid": 32,
+      "temperature_after_invalid": 26,
+      "either_invalid": 58
+    },
+    "units_saved": {
+      "zero_or_negative_consumption_placeholder": 48,
+      "avg_units_before_zero": 26,
+      "avg_units_after_zero": 22
+    },
+    "rating": {
+      "invalid_rating": 0
+    },
+    "referral": {
+      "invalid_referral": 0
+    }
+  },
+  "records_excluded_from_every_task": 0,
+  "audit_findings": [
+    {
+      "check": "missing_value",
+      "classification": "missing",
+      "n_records": 106
+    },
+    {
+      "check": "negative_savings",
+      "classification": "valid_adverse",
+      "n_records": 167
+    },
+    {
+      "check": "temperature_sentinel_or_out_of_range",
+      "classification": "invalid",
+      "n_records": 58
+    },
+    {
+      "check": "zero_consumption_placeholder",
+      "classification": "invalid",
+      "n_records": 48
+    }
+  ],
+  "zero_consumption_placeholders": {
+    "before": 26,
+    "after": 22,
+    "both": 0,
+    "after_when_before_is_zero_max": 113.0,
+    "before_when_after_is_zero_max": 273.0,
+    "min_after_over_before_ratio_among_valid": 0.0784313725490196
+  },
+  "negative_savings_rows": 167,
+  "zero_savings_rows": 404,
+  "temperature_sentinel_rows": {
+    "before": 32,
+    "after": 26,
+    "both": 0
+  },
+  "valid_temperature_drop_range": [
+    2.099999999999998,
+    13.510000000000002
+  ],
+  "assumptions": {
+    "units": "avg_units_* are monthly kWh (stated in the problem statement: 'average monthly electricity consumption (kWh)')",
+    "building_size_unit": "not stated in the problem statement ('floor area'); treated as an opaque area unit, shown as 'area units' / sq ft in the UI",
+    "high_rating_threshold": 4
+  }
+}

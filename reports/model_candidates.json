@@ -1,0 +1,623 @@
+{
+ "cost": [
+  {
+   "task": "cost",
+   "model": "dummy_mean",
+   "label": "Baseline: training mean",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 2.3,
+   "cv_mae": 625916.629147475,
+   "cv_rmse": 806345.7873349295,
+   "cv_r2": -0.0014291434428610472,
+   "cv_mae_fold_std": 8304.962946523709,
+   "select_score": 625916.629147475
+  },
+  {
+   "task": "cost",
+   "model": "linear",
+   "label": "Linear regression",
+   "family": "interpretable",
+   "params": {},
+   "fit_seconds": 1.6,
+   "cv_mae": 150036.4583052835,
+   "cv_rmse": 218456.5165099098,
+   "cv_r2": 0.9264965723873555,
+   "cv_mae_fold_std": 2367.184758474231,
+   "select_score": 150036.4583052835
+  },
+  {
+   "task": "cost",
+   "model": "loglinear_ridge",
+   "label": "Log-linear ridge (multiplicative)",
+   "family": "interpretable",
+   "params": {
+    "alpha": 1.0
+   },
+   "fit_seconds": 1.7,
+   "cv_mae": 25703.056525258628,
+   "cv_rmse": 44039.761664594946,
+   "cv_r2": 0.9970127779712363,
+   "cv_mae_fold_std": 1306.989622757772,
+   "select_score": 25703.056525258628
+  },
+  {
+   "task": "cost",
+   "model": "random_forest",
+   "label": "Random forest",
+   "family": "forest",
+   "params": {
+    "max_features": 0.7,
+    "min_samples_leaf": 1
+   },
+   "fit_seconds": 10.1,
+   "cv_mae": 91836.49233619672,
+   "cv_rmse": 157559.21514656921,
+   "cv_r2": 0.9617646384803048,
+   "cv_mae_fold_std": 7920.068327565673,
+   "select_score": 91836.49233619672
+  },
+  {
+   "task": "cost",
+   "model": "lightgbm",
+   "label": "LightGBM",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.85,
+    "reg_lambda": 0.0,
+    "num_leaves": 16,
+    "n_estimators": 600,
+    "min_child_samples": 5,
+    "learning_rate": 0.04,
+    "colsample_bytree": 1.0
+   },
+   "fit_seconds": 1.6,
+   "cv_mae": 40142.947734951085,
+   "cv_rmse": 70734.1085998104,
+   "cv_r2": 0.9922938873559888,
+   "cv_mae_fold_std": 1985.2997667663235,
+   "select_score": 40142.947734951085
+  },
+  {
+   "task": "cost",
+   "model": "lightgbm_log",
+   "label": "LightGBM (log target)",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.85,
+    "reg_lambda": 5.0,
+    "num_leaves": 8,
+    "n_estimators": 400,
+    "min_child_samples": 10,
+    "learning_rate": 0.08,
+    "colsample_bytree": 0.8
+   },
+   "fit_seconds": 1.5,
+   "cv_mae": 34810.798972041026,
+   "cv_rmse": 61013.912225357795,
+   "cv_r2": 0.9942662952046057,
+   "cv_mae_fold_std": 2219.3182636131755,
+   "select_score": 34810.798972041026
+  },
+  {
+   "task": "cost",
+   "model": "ratio_lightgbm",
+   "label": "LightGBM on cost-per-area x area",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.85,
+    "reg_lambda": 5.0,
+    "num_leaves": 8,
+    "n_estimators": 400,
+    "min_child_samples": 10,
+    "learning_rate": 0.08,
+    "colsample_bytree": 0.8
+   },
+   "fit_seconds": 1.4,
+   "cv_mae": 34568.420124408134,
+   "cv_rmse": 59141.76709381685,
+   "cv_r2": 0.9946127618246275,
+   "cv_mae_fold_std": 2292.57801116681,
+   "select_score": 34568.420124408134
+  }
+ ],
+ "temperature_drop": [
+  {
+   "task": "temperature_drop",
+   "model": "dummy_mean",
+   "label": "Baseline: training mean",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.0,
+   "cv_mae": 1.7041721976285285,
+   "cv_rmse": 2.121954382837741,
+   "cv_r2": -0.0011102142533525594,
+   "cv_mae_fold_std": 0.05239193552079427,
+   "select_score": 1.7041721976285285
+  },
+  {
+   "task": "temperature_drop",
+   "model": "linear",
+   "label": "Ridge regression",
+   "family": "interpretable",
+   "params": {
+    "alpha": 10.0
+   },
+   "fit_seconds": 0.2,
+   "cv_mae": 0.5082542130152744,
+   "cv_rmse": 0.6484746959775535,
+   "cv_r2": 0.9065033879025494,
+   "cv_mae_fold_std": 0.014822879796066219,
+   "select_score": 0.5082542130152744
+  },
+  {
+   "task": "temperature_drop",
+   "model": "poly2_ridge",
+   "label": "Ridge with pairwise interactions",
+   "family": "interpretable",
+   "params": {
+    "alpha": 10.0
+   },
+   "fit_seconds": 0.3,
+   "cv_mae": 0.4427833197370332,
+   "cv_rmse": 0.5671132359309331,
+   "cv_r2": 0.9284928658627948,
+   "cv_mae_fold_std": 0.017745043013655492,
+   "select_score": 0.4427833197370332
+  },
+  {
+   "task": "temperature_drop",
+   "model": "random_forest",
+   "label": "Random forest",
+   "family": "forest",
+   "params": {
+    "max_features": 0.7,
+    "min_samples_leaf": 8
+   },
+   "fit_seconds": 9.3,
+   "cv_mae": 0.4331645649297899,
+   "cv_rmse": 0.5453509680161185,
+   "cv_r2": 0.933875563735947,
+   "cv_mae_fold_std": 0.013752827100811466,
+   "select_score": 0.4331645649297899
+  },
+  {
+   "task": "temperature_drop",
+   "model": "lightgbm",
+   "label": "LightGBM",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.7,
+    "reg_lambda": 0.0,
+    "num_leaves": 4,
+    "n_estimators": 600,
+    "min_child_samples": 20,
+    "learning_rate": 0.02,
+    "colsample_bytree": 1.0
+   },
+   "fit_seconds": 1.4,
+   "cv_mae": 0.42105697935973213,
+   "cv_rmse": 0.5269880920960538,
+   "cv_r2": 0.9382536330288846,
+   "cv_mae_fold_std": 0.008682471516303742,
+   "select_score": 0.42105697935973213
+  },
+  {
+   "task": "temperature_drop",
+   "model": "ratio_lightgbm",
+   "label": "LightGBM on drop-fraction x starting temperature",
+   "family": "boosting",
+   "params": {
+    "subsample": 1.0,
+    "reg_lambda": 5.0,
+    "num_leaves": 6,
+    "n_estimators": 400,
+    "min_child_samples": 40,
+    "learning_rate": 0.02,
+    "colsample_bytree": 0.6
+   },
+   "fit_seconds": 1.4,
+   "cv_mae": 0.412366137574301,
+   "cv_rmse": 0.5180740457292238,
+   "cv_r2": 0.9403248557817837,
+   "cv_mae_fold_std": 0.010747365700360122,
+   "select_score": 0.412366137574301
+  }
+ ],
+ "units_saved": [
+  {
+   "task": "units_saved",
+   "model": "dummy_mean",
+   "label": "Baseline: training mean",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.0,
+   "cv_mae": 36.80597822117313,
+   "cv_rmse": 48.191215135172854,
+   "cv_r2": -0.0005014579794313523,
+   "cv_mae_fold_std": 1.906605454371424,
+   "select_score": 36.80597822117313
+  },
+  {
+   "task": "units_saved",
+   "model": "linear",
+   "label": "Ridge regression",
+   "family": "interpretable",
+   "params": {
+    "alpha": 10.0
+   },
+   "fit_seconds": 0.2,
+   "cv_mae": 8.323968054118055,
+   "cv_rmse": 12.177662920924735,
+   "cv_r2": 0.9361133863424709,
+   "cv_mae_fold_std": 0.35046385132973307,
+   "select_score": 8.323968054118055
+  },
+  {
+   "task": "units_saved",
+   "model": "poly2_ridge",
+   "label": "Ridge with pairwise interactions",
+   "family": "interpretable",
+   "params": {
+    "alpha": 10.0
+   },
+   "fit_seconds": 0.3,
+   "cv_mae": 3.8646187289088267,
+   "cv_rmse": 5.847788442381162,
+   "cv_r2": 0.9852678790133661,
+   "cv_mae_fold_std": 0.17195693171317725,
+   "select_score": 3.8646187289088267
+  },
+  {
+   "task": "units_saved",
+   "model": "random_forest",
+   "label": "Random forest",
+   "family": "forest",
+   "params": {
+    "max_features": 0.7,
+    "min_samples_leaf": 1
+   },
+   "fit_seconds": 11.0,
+   "cv_mae": 5.127247191011237,
+   "cv_rmse": 9.116038296430924,
+   "cv_r2": 0.9641990745235556,
+   "cv_mae_fold_std": 0.17524433666979775,
+   "select_score": 5.127247191011237
+  },
+  {
+   "task": "units_saved",
+   "model": "lightgbm",
+   "label": "LightGBM",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.85,
+    "reg_lambda": 0.0,
+    "num_leaves": 16,
+    "n_estimators": 600,
+    "min_child_samples": 5,
+    "learning_rate": 0.04,
+    "colsample_bytree": 1.0
+   },
+   "fit_seconds": 1.8,
+   "cv_mae": 3.828186736337878,
+   "cv_rmse": 6.532306224625347,
+   "cv_r2": 0.9816170569048451,
+   "cv_mae_fold_std": 0.18187822114816252,
+   "select_score": 3.828186736337878
+  },
+  {
+   "task": "units_saved",
+   "model": "ratio_lightgbm",
+   "label": "LightGBM on saved-fraction x current usage",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.85,
+    "reg_lambda": 20.0,
+    "num_leaves": 12,
+    "n_estimators": 600,
+    "min_child_samples": 10,
+    "learning_rate": 0.02,
+    "colsample_bytree": 0.6
+   },
+   "fit_seconds": 1.8,
+   "cv_mae": 3.3126545270702747,
+   "cv_rmse": 5.306523525027355,
+   "cv_r2": 0.9878688447862435,
+   "cv_mae_fold_std": 0.14437975888570678,
+   "select_score": 3.3126545270702747
+  }
+ ],
+ "rating": [
+  {
+   "task": "rating",
+   "model": "dummy_mean",
+   "label": "Baseline: training mean rating",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.1,
+   "cv_mae": 0.9567268750000001,
+   "cv_rmse": 1.1519153207810027,
+   "cv_r2": -0.0006560186012627423,
+   "cv_mae_fold_std": 0.026353475332664873,
+   "select_score": 0.9567268750000001,
+   "cv_mae_rounded": 0.923
+  },
+  {
+   "task": "rating",
+   "model": "dummy_median",
+   "label": "Baseline: training median rating",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.1,
+   "cv_mae": 0.923,
+   "cv_rmse": 1.1721774609674083,
+   "cv_r2": -0.036168619474992614,
+   "cv_mae_fold_std": 0.037139938072107755,
+   "select_score": 0.923,
+   "cv_mae_rounded": 0.923
+  },
+  {
+   "task": "rating",
+   "model": "linear",
+   "label": "Ridge regression",
+   "family": "interpretable",
+   "params": {
+    "alpha": 10.0
+   },
+   "fit_seconds": 0.3,
+   "cv_mae": 0.8156761479764985,
+   "cv_rmse": 0.9700529247104933,
+   "cv_r2": 0.2903657609320828,
+   "cv_mae_fold_std": 0.029098480230868803,
+   "select_score": 0.8156761479764985,
+   "cv_mae_rounded": 0.7885
+  },
+  {
+   "task": "rating",
+   "model": "random_forest",
+   "label": "Random forest",
+   "family": "forest",
+   "params": {
+    "max_features": 0.4,
+    "min_samples_leaf": 8
+   },
+   "fit_seconds": 11.3,
+   "cv_mae": 0.7875996496875016,
+   "cv_rmse": 0.9328547382276624,
+   "cv_r2": 0.343746328249923,
+   "cv_mae_fold_std": 0.03678711782603376,
+   "select_score": 0.7875996496875016,
+   "cv_mae_rounded": 0.763
+  },
+  {
+   "task": "rating",
+   "model": "lightgbm",
+   "label": "LightGBM",
+   "family": "boosting",
+   "params": {
+    "subsample": 1.0,
+    "reg_lambda": 5.0,
+    "num_leaves": 6,
+    "n_estimators": 400,
+    "min_child_samples": 40,
+    "learning_rate": 0.02,
+    "colsample_bytree": 0.6
+   },
+   "fit_seconds": 1.8,
+   "cv_mae": 0.7843639706208337,
+   "cv_rmse": 0.9299658610716628,
+   "cv_r2": 0.34780462508360677,
+   "cv_mae_fold_std": 0.03564126092631343,
+   "select_score": 0.7843639706208337,
+   "cv_mae_rounded": 0.7525
+  },
+  {
+   "task": "rating",
+   "model": "lightgbm_l1",
+   "label": "LightGBM (absolute-error objective)",
+   "family": "boosting",
+   "params": {
+    "subsample": 0.85,
+    "reg_lambda": 20.0,
+    "num_leaves": 4,
+    "n_estimators": 250,
+    "min_child_samples": 20,
+    "learning_rate": 0.04,
+    "colsample_bytree": 1.0
+   },
+   "fit_seconds": 1.8,
+   "cv_mae": 0.7849333825904838,
+   "cv_rmse": 0.9404356125707265,
+   "cv_r2": 0.3330368553328542,
+   "cv_mae_fold_std": 0.03345884011524279,
+   "select_score": 0.7849333825904838,
+   "cv_mae_rounded": 0.7605
+  }
+ ],
+ "high_rating": [
+  {
+   "task": "high_rating",
+   "model": "dummy_prior",
+   "label": "Baseline: majority class (class prior)",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.1,
+   "cv_accuracy": 0.576,
+   "cv_f1": 0.0,
+   "cv_log_loss": 0.6815520087436512,
+   "cv_brier": 0.24422484375,
+   "cv_roc_auc": 0.4987716194968553,
+   "cv_best_f1": 0.5955056179775281,
+   "cv_f1_threshold": 0.05,
+   "cv_accuracy_at_f1_threshold": 0.424,
+   "select_score": -0.576
+  },
+  {
+   "task": "high_rating",
+   "model": "logistic",
+   "label": "Logistic regression",
+   "family": "interpretable",
+   "params": {
+    "C": 0.1
+   },
+   "fit_seconds": 0.3,
+   "cv_accuracy": 0.664,
+   "cv_f1": 0.5692307692307692,
+   "cv_log_loss": 0.5875338290451793,
+   "cv_brier": 0.20203331037348063,
+   "cv_roc_auc": 0.7447599335036688,
+   "cv_best_f1": 0.6766844401357247,
+   "cv_f1_threshold": 0.34,
+   "cv_accuracy_at_f1_threshold": 0.6665,
+   "select_score": -0.664
+  },
+  {
+   "task": "high_rating",
+   "model": "random_forest",
+   "label": "Random forest",
+   "family": "forest",
+   "params": {
+    "max_features": 0.4,
+    "min_samples_leaf": 8
+   },
+   "fit_seconds": 11.2,
+   "cv_accuracy": 0.683,
+   "cv_f1": 0.612942612942613,
+   "cv_log_loss": 0.5721213209653758,
+   "cv_brier": 0.19658374327328831,
+   "cv_roc_auc": 0.7559965441561844,
+   "cv_best_f1": 0.6737819025522042,
+   "cv_f1_threshold": 0.33,
+   "cv_accuracy_at_f1_threshold": 0.6485,
+   "select_score": -0.683
+  },
+  {
+   "task": "high_rating",
+   "model": "lightgbm",
+   "label": "LightGBM",
+   "family": "boosting",
+   "params": {
+    "subsample": 1.0,
+    "reg_lambda": 1.0,
+    "num_leaves": 4,
+    "n_estimators": 150,
+    "min_child_samples": 40,
+    "learning_rate": 0.04,
+    "colsample_bytree": 0.6
+   },
+   "fit_seconds": 1.8,
+   "cv_accuracy": 0.689,
+   "cv_f1": 0.6188725490196079,
+   "cv_log_loss": 0.5638585350603357,
+   "cv_brier": 0.1928288842433243,
+   "cv_roc_auc": 0.767052480509696,
+   "cv_best_f1": 0.6791762013729977,
+   "cv_f1_threshold": 0.32,
+   "cv_accuracy_at_f1_threshold": 0.6495,
+   "select_score": -0.689
+  }
+ ],
+ "referral": [
+  {
+   "task": "referral",
+   "model": "dummy_prior",
+   "label": "Baseline: majority class (class prior)",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.1,
+   "cv_accuracy": 0.6415,
+   "cv_f1": 0.0,
+   "cv_log_loss": 0.6525520973495017,
+   "cv_brier": 0.22997859375000002,
+   "cv_roc_auc": 0.49869552598023065,
+   "cv_best_f1": 0.527788001472212,
+   "cv_f1_threshold": 0.05,
+   "cv_accuracy_at_f1_threshold": 0.3585,
+   "select_score": -0.0
+  },
+  {
+   "task": "referral",
+   "model": "dummy_always_positive",
+   "label": "Baseline: predict everyone refers",
+   "family": "baseline",
+   "params": {},
+   "fit_seconds": 0.1,
+   "cv_accuracy": 0.3585,
+   "cv_f1": 0.527788001472212,
+   "cv_log_loss": 8.862650381415813,
+   "cv_brier": 0.6414987170009999,
+   "cv_roc_auc": 0.5,
+   "cv_best_f1": 0.527788001472212,
+   "cv_f1_threshold": 0.05,
+   "cv_accuracy_at_f1_threshold": 0.3585,
+   "select_score": -0.527788001472212
+  },
+  {
+   "task": "referral",
+   "model": "logistic",
+   "label": "Logistic regression",
+   "family": "interpretable",
+   "params": {
+    "C": 0.1,
+    "class_weight": null
+   },
+   "fit_seconds": 0.3,
+   "cv_accuracy": 0.6515,
+   "cv_f1": 0.35522664199814985,
+   "cv_log_loss": 0.6153895686077778,
+   "cv_brier": 0.21397422437436203,
+   "cv_roc_auc": 0.6586158878413237,
+   "cv_best_f1": 0.5665158371040724,
+   "cv_f1_threshold": 0.25,
+   "cv_accuracy_at_f1_threshold": 0.521,
+   "select_score": -0.5665158371040724
+  },
+  {
+   "task": "referral",
+   "model": "random_forest",
+   "label": "Random forest",
+   "family": "forest",
+   "params": {
+    "class_weight": null,
+    "max_features": 0.4,
+    "min_samples_leaf": 8
+   },
+   "fit_seconds": 20.6,
+   "cv_accuracy": 0.6635,
+   "cv_f1": 0.39423942394239425,
+   "cv_log_loss": 0.6203219453487961,
+   "cv_brier": 0.21623518083007773,
+   "cv_roc_auc": 0.6473702347292293,
+   "cv_best_f1": 0.5583299222267704,
+   "cv_f1_threshold": 0.18,
+   "cv_accuracy_at_f1_threshold": 0.4605,
+   "select_score": -0.5583299222267704
+  },
+  {
+   "task": "referral",
+   "model": "lightgbm",
+   "label": "LightGBM",
+   "family": "boosting",
+   "params": {
+    "subsample": 1.0,
+    "reg_lambda": 1.0,
+    "num_leaves": 4,
+    "n_estimators": 150,
+    "min_child_samples": 40,
+    "learning_rate": 0.04,
+    "colsample_bytree": 0.6,
+    "class_weight": null
+   },
+   "fit_seconds": 1.2,
+   "cv_accuracy": 0.667,
+   "cv_f1": 0.37523452157598497,
+   "cv_log_loss": 0.6109316077451297,
+   "cv_brier": 0.21195777055379483,
+   "cv_roc_auc": 0.6672694423699683,
+   "cv_best_f1": 0.5660906118636151,
+   "cv_f1_threshold": 0.27,
+   "cv_accuracy_at_f1_threshold": 0.5355,
+   "select_score": -0.5660906118636151
+  }
+ ]
+}

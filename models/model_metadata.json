@@ -1,0 +1,1668 @@
+{
+  "model_version": "1.0.0",
+  "trained_at_utc": "2026-10-18T10:54:30+00:00",
+  "seed": 42,
+  "test_size": 0.2,
+  "cv_folds": 5,
+  "high_rating_threshold": 4,
+  "data": {
+    "raw_csv_sha256": "f72b8409df4430ec8c1c6d0cdecee0887f59771c8368f79cf826ebcfe49c848b",
+    "n_rows": 2500,
+    "n_train_validation_buildings": 2000,
+    "n_test_buildings": 500
+  },
+  "environment": {
+    "python": "3.10.11",
+    "scikit_learn": "1.7.2",
+    "lightgbm": "4.7.0",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "feature_schema": {
+    "features": [
+      "location_type",
+      "building_size",
+      "building_age",
+      "roofing_type",
+      "cool_roofing_quality",
+      "cool_roofing_method",
+      "avg_roof_temperature_before",
+      "num_ac_units",
+      "avg_units_before"
+    ],
+    "categorical": [
+      "location_type",
+      "roofing_type",
+      "cool_roofing_quality",
+      "cool_roofing_method"
+    ],
+    "numeric": [
+      "building_size",
+      "building_age",
+      "avg_roof_temperature_before",
+      "num_ac_units",
+      "avg_units_before"
+    ],
+    "decision_variables": [
+      "cool_roofing_method",
+      "cool_roofing_quality"
+    ],
+    "categories": {
+      "location_type": [
+        "rural",
+        "intermediate",
+        "urban",
+        "dense_urban"
+      ],
+      "roofing_type": [
+        "concrete_flat",
+        "concrete_slanted",
+        "sheet",
+        "tiles"
+      ],
+      "cool_roofing_quality": [
+        "basic",
+        "intermediate",
+        "high"
+      ],
+      "cool_roofing_method": [
+        "basic_coating",
+        "sheet",
+        "sheet_with_coating",
+        "tiles",
+        "tiles_with_coating"
+      ]
+    },
+    "training_ranges": {
+      "building_size": [
+        300.0,
+        3000.0
+      ],
+      "building_age": [
+        1.0,
+        50.0
+      ],
+      "avg_roof_temperature_before": [
+        22.98,
+        40.93
+      ],
+      "num_ac_units": [
+        0.0,
+        3.0
+      ],
+      "avg_units_before": [
+        4.0,
+        500.0
+      ]
+    }
+  },
+  "method_roof_support": [
+    {
+      "roofing_type": "concrete_flat",
+      "cool_roofing_method": "basic_coating",
+      "n": 143
+    },
+    {
+      "roofing_type": "concrete_flat",
+      "cool_roofing_method": "sheet",
+      "n": 175
+    },
+    {
+      "roofing_type": "concrete_flat",
+      "cool_roofing_method": "sheet_with_coating",
+      "n": 145
+    },
+    {
+      "roofing_type": "concrete_flat",
+      "cool_roofing_method": "tiles",
+      "n": 158
+    },
+    {
+      "roofing_type": "concrete_flat",
+      "cool_roofing_method": "tiles_with_coating",
+      "n": 174
+    },
+    {
+      "roofing_type": "concrete_slanted",
+      "cool_roofing_method": "basic_coating",
+      "n": 104
+    },
+    {
+      "roofing_type": "concrete_slanted",
+      "cool_roofing_method": "sheet",
+      "n": 97
+    },
+    {
+      "roofing_type": "concrete_slanted",
+      "cool_roofing_method": "sheet_with_coating",
+      "n": 106
+    },
+    {
+      "roofing_type": "concrete_slanted",
+      "cool_roofing_method": "tiles",
+      "n": 125
+    },
+    {
+      "roofing_type": "concrete_slanted",
+      "cool_roofing_method": "tiles_with_coating",
+      "n": 96
+    },
+    {
+      "roofing_type": "sheet",
+      "cool_roofing_method": "basic_coating",
+      "n": 184
+    },
+    {
+      "roofing_type": "sheet",
+      "cool_roofing_method": "sheet",
+      "n": 144
+    },
+    {
+      "roofing_type": "sheet",
+      "cool_roofing_method": "sheet_with_coating",
+      "n": 175
+    },
+    {
+      "roofing_type": "tiles",
+      "cool_roofing_method": "basic_coating",
+      "n": 210
+    },
+    {
+      "roofing_type": "tiles",
+      "cool_roofing_method": "tiles",
+      "n": 235
+    },
+    {
+      "roofing_type": "tiles",
+      "cool_roofing_method": "tiles_with_coating",
+      "n": 229
+    }
+  ],
+  "tasks": {
+    "cost": {
+      "task": "cost",
+      "label": "Installation cost",
+      "kind": "regression",
+      "unit": "INR",
+      "target_definition": "Total cost of the cool-roofing intervention in INR.",
+      "features": [
+        "location_type",
+        "building_size",
+        "building_age",
+        "roofing_type",
+        "cool_roofing_quality",
+        "cool_roofing_method",
+        "avg_roof_temperature_before",
+        "num_ac_units",
+        "avg_units_before"
+      ],
+      "n_train_validation": 1979,
+      "n_test": 493,
+      "n_eligible": 2472,
+      "selected": "loglinear_ridge",
+      "selected_label": "Log-linear ridge (multiplicative)",
+      "selected_family": "interpretable",
+      "selected_params": {
+        "alpha": 1.0
+      },
+      "baseline": "dummy_mean",
+      "baseline_label": "Baseline: training mean",
+      "test": {
+        "mae": 25299.374993189773,
+        "rmse": 38515.28900727486,
+        "median_ae": 14489.636354927206,
+        "r2": 0.9978139307909365,
+        "bias": -753.0397899308542,
+        "n": 493
+      },
+      "test_baseline": {
+        "mae": 637024.1206091958,
+        "rmse": 823818.2459116436,
+        "median_ae": 549403.8908539666,
+        "r2": -0.0001390814678055019,
+        "bias": -9714.84420082257,
+        "n": 493
+      },
+      "validation": {
+        "mae": 25703.056525258628,
+        "rmse": 44039.761664594946,
+        "r2": 0.9970127779712363
+      },
+      "validation_baseline": {
+        "mae": 625916.629147475,
+        "rmse": 806345.7873349295
+      },
+      "beats_baseline": true,
+      "interval_model": {
+        "kind": "log_ratio",
+        "edges": [
+          610967.2795698156,
+          1224889.0782033433
+        ],
+        "levels": {
+          "0.8": [
+            [
+              -0.03811371393327844,
+              0.037526339911132904
+            ],
+            [
+              -0.0330254463575078,
+              0.03344983149356993
+            ],
+            [
+              -0.03584129177417309,
+              0.035922175333334465
+            ]
+          ],
+          "0.9": [
+            [
+              -0.04958695562399195,
+              0.05194873343868062
+            ],
+            [
+              -0.041374730349931305,
+              0.04306194656233935
+            ],
+            [
+              -0.045084167483789434,
+              0.047652444708619034
+            ]
+          ]
+        }
+      },
+      "interval_coverage_test": {
+        "0.8": 0.7768762677484787,
+        "0.9": 0.8823529411764706
+      },
+      "plausibility_test": {
+        "n": 493,
+        "n_nan_or_inf": 0,
+        "n_non_positive": 0
+      },
+      "plausibility_train_oof": {
+        "n": 1979,
+        "n_nan_or_inf": 0,
+        "n_non_positive": 0
+      },
+      "significance": {
+        "kind": "regression",
+        "n": 493,
+        "baseline_rule": "training mean",
+        "mae": 25299.374993189773,
+        "mae_ci95": [
+          22794.94200446269,
+          27941.410868170144
+        ],
+        "baseline_mae": 637024.1206091958,
+        "mae_improvement": 611693.8265000582,
+        "mae_improvement_ci95": [
+          567175.5343327405,
+          659757.6906349672
+        ],
+        "verdict": "better"
+      }
+    },
+    "temperature_drop": {
+      "task": "temperature_drop",
+      "label": "Roof temperature drop",
+      "kind": "regression",
+      "unit": "\u00b0C",
+      "target_definition": "avg_roof_temperature_before - avg_roof_temperature_after.",
+      "features": [
+        "location_type",
+        "building_size",
+        "building_age",
+        "roofing_type",
+        "cool_roofing_quality",
+        "cool_roofing_method",
+        "avg_roof_temperature_before",
+        "num_ac_units",
+        "avg_units_before"
+      ],
+      "n_train_validation": 1956,
+      "n_test": 486,
+      "n_eligible": 2442,
+      "selected": "ratio_lightgbm",
+      "selected_label": "LightGBM on drop-fraction x starting temperature",
+      "selected_family": "boosting",
+      "selected_params": {
+        "subsample": 1.0,
+        "reg_lambda": 5.0,
+        "num_leaves": 6,
+        "n_estimators": 400,
+        "min_child_samples": 40,
+        "learning_rate": 0.02,
+        "colsample_bytree": 0.6
+      },
+      "baseline": "dummy_mean",
+      "baseline_label": "Baseline: training mean",
+      "test": {
+        "mae": 0.413911708724423,
+        "rmse": 0.5116461953148586,
+        "median_ae": 0.36091575947465593,
+        "r2": 0.9477399602482056,
+        "bias": 0.023802765212867907,
+        "n": 486
+      },
+      "test_baseline": {
+        "mae": 1.7967611317293208,
+        "rmse": 2.238529076927874,
+        "median_ae": 1.5399999999999991,
+        "r2": -0.0003586173925289593,
+        "bias": -0.042383864778206604,
+        "n": 486
+      },
+      "validation": {
+        "mae": 0.412366137574301,
+        "rmse": 0.5180740457292238,
+        "r2": 0.9403248557817837
+      },
+      "validation_baseline": {
+        "mae": 1.7041721976285285,
+        "rmse": 2.121954382837741
+      },
+      "beats_baseline": true,
+      "interval_model": {
+        "kind": "additive",
+        "edges": [
+          4.830119362070743,
+          6.623044771552386
+        ],
+        "levels": {
+          "0.8": [
+            [
+              -0.5075212768361677,
+              0.47994583089272636
+            ],
+            [
+              -0.649106738084566,
+              0.6249567013915612
+            ],
+            [
+              -0.8130880763175866,
+              0.9647921121112917
+            ]
+          ],
+          "0.9": [
+            [
+              -0.6402691539169663,
+              0.5885750771048177
+            ],
+            [
+              -0.7751506319095209,
+              0.7315706832358561
+            ],
+            [
+              -0.9683372752118904,
+              1.1585894244131143
+            ]
+          ]
+        }
+      },
+      "interval_coverage_test": {
+        "0.8": 0.7880658436213992,
+        "0.9": 0.8806584362139918
+      },
+      "plausibility_test": {
+        "n": 486,
+        "n_nan_or_inf": 0,
+        "n_negative_drop": 0,
+        "n_drop_exceeds_start_temp": 0
+      },
+      "plausibility_train_oof": {
+        "n": 1956,
+        "n_nan_or_inf": 0,
+        "n_negative_drop": 0,
+        "n_drop_exceeds_start_temp": 0
+      },
+      "significance": {
+        "kind": "regression",
+        "n": 486,
+        "baseline_rule": "training mean",
+        "mae": 0.413911708724423,
+        "mae_ci95": [
+          0.3859039769249095,
+          0.44156390301626075
+        ],
+        "baseline_mae": 1.7967611317293208,
+        "mae_improvement": 1.3851774634981864,
+        "mae_improvement_ci95": [
+          1.2712836888441856,
+          1.5044418448896115
+        ],
+        "verdict": "better"
+      }
+    },
+    "units_saved": {
+      "task": "units_saved",
+      "label": "Monthly electricity saved",
+      "kind": "regression",
+      "unit": "kWh/month",
+      "target_definition": "avg_units_before - avg_units_after (monthly kWh).",
+      "features": [
+        "location_type",
+        "building_size",
+        "building_age",
+        "roofing_type",
+        "cool_roofing_quality",
+        "cool_roofing_method",
+        "avg_roof_temperature_before",
+        "num_ac_units",
+        "avg_units_before"
+      ],
+      "n_train_validation": 1958,
+      "n_test": 494,
+      "n_eligible": 2452,
+      "selected": "ratio_lightgbm",
+      "selected_label": "LightGBM on saved-fraction x current usage",
+      "selected_family": "boosting",
+      "selected_params": {
+        "subsample": 0.85,
+        "reg_lambda": 20.0,
+        "num_leaves": 12,
+        "n_estimators": 600,
+        "min_child_samples": 10,
+        "learning_rate": 0.02,
+        "colsample_bytree": 0.6
+      },
+      "baseline": "dummy_mean",
+      "baseline_label": "Baseline: training mean",
+      "test": {
+        "mae": 3.6169681735626447,
+        "rmse": 5.870185027705405,
+        "median_ae": 1.8502114054592198,
+        "r2": 0.9867595854654656,
+        "bias": -0.046148099039642475,
+        "n": 494
+      },
+      "test_baseline": {
+        "mae": 38.35401529280891,
+        "rmse": 51.04847035298893,
+        "median_ae": 32.71041879468846,
+        "r2": -0.0012982747458778476,
+        "bias": -1.8381642012629622,
+        "n": 494
+      },
+      "validation": {
+        "mae": 3.3126545270702747,
+        "rmse": 5.306523525027355,
+        "r2": 0.9878688447862435
+      },
+      "validation_baseline": {
+        "mae": 36.80597822117313,
+        "rmse": 48.191215135172854
+      },
+      "beats_baseline": true,
+      "interval_model": {
+        "kind": "additive",
+        "edges": [
+          17.900044594394405,
+          55.801248924454406
+        ],
+        "levels": {
+          "0.8": [
+            [
+              -1.2514045743810782,
+              1.2398566336043948
+            ],
+            [
+              -4.834637655918226,
+              4.1079495822076515
+            ],
+            [
+              -9.549740832350585,
+              10.170466343436079
+            ]
+          ],
+          "0.9": [
+            [
+              -1.8434766440258186,
+              1.873009522854511
+            ],
+            [
+              -6.346030481091211,
+              5.810661214271951
+            ],
+            [
+              -13.687805379296691,
+              14.06666394138622
+            ]
+          ]
+        }
+      },
+      "interval_coverage_test": {
+        "0.8": 0.7550607287449392,
+        "0.9": 0.8805668016194332
+      },
+      "plausibility_test": {
+        "n": 494,
+        "n_nan_or_inf": 0,
+        "n_saving_exceeds_usage": 0,
+        "n_negative_saving": 60
+      },
+      "plausibility_train_oof": {
+        "n": 1958,
+        "n_nan_or_inf": 0,
+        "n_saving_exceeds_usage": 0,
+        "n_negative_saving": 297
+      },
+      "significance": {
+        "kind": "regression",
+        "n": 494,
+        "baseline_rule": "training mean",
+        "mae": 3.6169681735626447,
+        "mae_ci95": [
+          3.2205493646737495,
+          4.012567714623771
+        ],
+        "baseline_mae": 38.35401529280891,
+        "mae_improvement": 34.696638682144794,
+        "mae_improvement_ci95": [
+          31.746040456762664,
+          37.627644249573294
+        ],
+        "verdict": "better"
+      }
+    },
+    "rating": {
+      "task": "rating",
+      "label": "Customer rating (1-5)",
+      "kind": "regression",
+      "unit": "rating points",
+      "target_definition": "Numeric 1-5 rating (MAE) plus a high-rating (>= threshold) classification (accuracy).",
+      "features": [
+        "location_type",
+        "building_size",
+        "building_age",
+        "roofing_type",
+        "cool_roofing_quality",
+        "cool_roofing_method",
+        "avg_roof_temperature_before",
+        "num_ac_units",
+        "avg_units_before"
+      ],
+      "n_train_validation": 2000,
+      "n_test": 500,
+      "n_eligible": 2500,
+      "selected": "lightgbm",
+      "selected_label": "LightGBM",
+      "selected_family": "boosting",
+      "selected_params": {
+        "subsample": 1.0,
+        "reg_lambda": 5.0,
+        "num_leaves": 6,
+        "n_estimators": 400,
+        "min_child_samples": 40,
+        "learning_rate": 0.02,
+        "colsample_bytree": 0.6
+      },
+      "baseline": "dummy_median",
+      "baseline_label": "Baseline: training median rating",
+      "test": {
+        "mae": 0.7689869553214228,
+        "rmse": 0.9219800257490979,
+        "median_ae": 0.7245452542687838,
+        "r2": 0.3605513938601994,
+        "bias": 0.017768048181116214,
+        "n": 500,
+        "mae_rounded": 0.742,
+        "exact_match_accuracy_rounded": 0.346,
+        "within_one_star": 0.912,
+        "derived_high_rating_accuracy": 0.696,
+        "derived_high_rating_f1": 0.6102564102564103
+      },
+      "test_baseline": {
+        "mae": 0.924,
+        "rmse": 1.1730302638892143,
+        "median_ae": 1.0,
+        "r2": -0.035097010254681926,
+        "bias": -0.216,
+        "n": 500
+      },
+      "validation": {
+        "mae": 0.7843639706208337,
+        "rmse": 0.9299658610716628,
+        "r2": 0.34780462508360677,
+        "derived_high_rating_accuracy": 0.706
+      },
+      "validation_baseline": {
+        "mae": 0.923,
+        "rmse": 1.1721774609674083
+      },
+      "beats_baseline": true,
+      "interval_model": {
+        "kind": "additive",
+        "edges": [
+          2.958095365304781,
+          3.5637855290260707
+        ],
+        "levels": {
+          "0.8": [
+            [
+              -1.2205951612994839,
+              1.2462824673831268
+            ],
+            [
+              -1.291116720343244,
+              1.0365167767209924
+            ],
+            [
+              -1.1807454916430637,
+              1.1451139808178334
+            ]
+          ],
+          "0.9": [
+            [
+              -1.5059544642275113,
+              1.4038040815872839
+            ],
+            [
+              -1.4183094506248257,
+              1.6146909571492212
+            ],
+            [
+              -1.642582793336911,
+              1.2792927372055531
+            ]
+          ]
+        }
+      },
+      "interval_coverage_test": {
+        "0.8": 0.798,
+        "0.9": 0.9
+      },
+      "plausibility_test": {
+        "n": 500,
+        "n_nan_or_inf": 0,
+        "n_outside_1_5": 0
+      },
+      "plausibility_train_oof": {
+        "n": 2000,
+        "n_nan_or_inf": 0,
+        "n_outside_1_5": 0
+      },
+      "significance": {
+        "kind": "regression",
+        "n": 500,
+        "baseline_rule": "training median",
+        "mae": 0.7689869553214228,
+        "mae_ci95": [
+          0.7263299689811884,
+          0.8141682687087367
+        ],
+        "baseline_mae": 0.924,
+        "mae_improvement": 0.15396163980283956,
+        "mae_improvement_ci95": [
+          0.09698883157515487,
+          0.2114401090533538
+        ],
+        "verdict": "better"
+      }
+    },
+    "high_rating": {
+      "task": "high_rating",
+      "label": "High rating (>= threshold)",
+      "kind": "classification",
+      "unit": "probability",
+      "target_definition": "Separately trained classifier for customer_given_rating >= HIGH_RATING_THRESHOLD.",
+      "features": [
+        "location_type",
+        "building_size",
+        "building_age",
+        "roofing_type",
+        "cool_roofing_quality",
+        "cool_roofing_method",
+        "avg_roof_temperature_before",
+        "num_ac_units",
+        "avg_units_before"
+      ],
+      "n_train_validation": 2000,
+      "n_test": 500,
+      "n_eligible": 2500,
+      "selected": "lightgbm",
+      "selected_label": "LightGBM",
+      "selected_family": "boosting",
+      "selected_params": {
+        "subsample": 1.0,
+        "reg_lambda": 1.0,
+        "num_leaves": 4,
+        "n_estimators": 150,
+        "min_child_samples": 40,
+        "learning_rate": 0.04,
+        "colsample_bytree": 0.6
+      },
+      "baseline": "dummy_prior",
+      "baseline_label": "Baseline: majority class (class prior)",
+      "calibration_decision": {
+        "brier_uncalibrated_oof": 0.1928288842433243,
+        "brier_sigmoid_calibrated_oof": 0.19285805997937108
+      },
+      "threshold_policy": "fixed 0.5 (accuracy is the required metric)",
+      "threshold": 0.5,
+      "calibrated": false,
+      "test": {
+        "accuracy": 0.688,
+        "f1": 0.6138613861386139,
+        "precision": 0.6458333333333334,
+        "recall": 0.5849056603773585,
+        "macro_f1": 0.6760582098478305,
+        "confusion_matrix": {
+          "tn": 220,
+          "fp": 68,
+          "fn": 88,
+          "tp": 124
+        },
+        "support": {
+          "negative": 288,
+          "positive": 212
+        },
+        "positive_rate_true": 0.424,
+        "positive_rate_pred": 0.384,
+        "n": 500,
+        "brier": 0.19828873081434856,
+        "log_loss": 0.5791083549848244,
+        "roc_auc": 0.7551018736897274
+      },
+      "test_at_0_5": {
+        "accuracy": 0.688,
+        "f1": 0.6138613861386139,
+        "precision": 0.6458333333333334,
+        "recall": 0.5849056603773585,
+        "macro_f1": 0.6760582098478305,
+        "confusion_matrix": {
+          "tn": 220,
+          "fp": 68,
+          "fn": 88,
+          "tp": 124
+        },
+        "support": {
+          "negative": 288,
+          "positive": 212
+        },
+        "positive_rate_true": 0.424,
+        "positive_rate_pred": 0.384,
+        "n": 500,
+        "brier": 0.19828873081434856,
+        "log_loss": 0.5791083549848244,
+        "roc_auc": 0.7551018736897274
+      },
+      "test_baseline": {
+        "accuracy": 0.576,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "macro_f1": 0.36548223350253806,
+        "confusion_matrix": {
+          "tn": 288,
+          "fp": 0,
+          "fn": 212,
+          "tp": 0
+        },
+        "support": {
+          "negative": 288,
+          "positive": 212
+        },
+        "positive_rate_true": 0.424,
+        "positive_rate_pred": 0.0,
+        "n": 500,
+        "brier": 0.244224,
+        "log_loss": 0.6815502814029535,
+        "roc_auc": 0.5
+      },
+      "test_baseline_always_positive": {
+        "accuracy": 0.424,
+        "f1": 0.5955056179775281,
+        "precision": 0.424,
+        "recall": 1.0,
+        "macro_f1": 0.29775280898876405,
+        "confusion_matrix": {
+          "tn": 0,
+          "fp": 288,
+          "fn": 0,
+          "tp": 212
+        },
+        "support": {
+          "negative": 288,
+          "positive": 212
+        },
+        "positive_rate_true": 0.424,
+        "positive_rate_pred": 1.0,
+        "n": 500
+      },
+      "test_baseline_always_negative": {
+        "accuracy": 0.576,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "macro_f1": 0.36548223350253806,
+        "confusion_matrix": {
+          "tn": 288,
+          "fp": 0,
+          "fn": 212,
+          "tp": 0
+        },
+        "support": {
+          "negative": 288,
+          "positive": 212
+        },
+        "positive_rate_true": 0.424,
+        "positive_rate_pred": 0.0,
+        "n": 500
+      },
+      "operating_points": {
+        "oof": [
+          {
+            "threshold": 0.1,
+            "accuracy": 0.504,
+            "f1": 0.6295743091859597,
+            "precision": 0.460655737704918,
+            "recall": 0.9941037735849056
+          },
+          {
+            "threshold": 0.15,
+            "accuracy": 0.556,
+            "f1": 0.6509433962264151,
+            "precision": 0.4882075471698113,
+            "recall": 0.9764150943396226
+          },
+          {
+            "threshold": 0.2,
+            "accuracy": 0.593,
+            "f1": 0.6672117743254292,
+            "precision": 0.5106382978723404,
+            "recall": 0.9622641509433962
+          },
+          {
+            "threshold": 0.25,
+            "accuracy": 0.614,
+            "f1": 0.6723259762308998,
+            "precision": 0.5251989389920424,
+            "recall": 0.9339622641509434
+          },
+          {
+            "threshold": 0.3,
+            "accuracy": 0.637,
+            "f1": 0.6753130590339893,
+            "precision": 0.5439481268011528,
+            "recall": 0.8903301886792453
+          },
+          {
+            "threshold": 0.35,
+            "accuracy": 0.6585,
+            "f1": 0.6755344418052257,
+            "precision": 0.5656324582338902,
+            "recall": 0.8384433962264151
+          },
+          {
+            "threshold": 0.4,
+            "accuracy": 0.68,
+            "f1": 0.6673596673596673,
+            "precision": 0.5966542750929368,
+            "recall": 0.7570754716981132
+          },
+          {
+            "threshold": 0.45,
+            "accuracy": 0.6965,
+            "f1": 0.6607043040804919,
+            "precision": 0.6280552603613178,
+            "recall": 0.6969339622641509
+          },
+          {
+            "threshold": 0.5,
+            "accuracy": 0.689,
+            "f1": 0.6188725490196079,
+            "precision": 0.6441326530612245,
+            "recall": 0.5955188679245284
+          },
+          {
+            "threshold": 0.55,
+            "accuracy": 0.6905,
+            "f1": 0.5826028320971005,
+            "precision": 0.6803149606299213,
+            "recall": 0.5094339622641509
+          },
+          {
+            "threshold": 0.6,
+            "accuracy": 0.6805,
+            "f1": 0.5256124721603563,
+            "precision": 0.7094188376753507,
+            "recall": 0.41745283018867924
+          },
+          {
+            "threshold": 0.65,
+            "accuracy": 0.669,
+            "f1": 0.44741235392320533,
+            "precision": 0.7657142857142857,
+            "recall": 0.3160377358490566
+          },
+          {
+            "threshold": 0.7,
+            "accuracy": 0.649,
+            "f1": 0.35359116022099446,
+            "precision": 0.8067226890756303,
+            "recall": 0.22641509433962265
+          },
+          {
+            "threshold": 0.75,
+            "accuracy": 0.612,
+            "f1": 0.20164609053497942,
+            "precision": 0.7903225806451613,
+            "recall": 0.11556603773584906
+          },
+          {
+            "threshold": 0.8,
+            "accuracy": 0.5915,
+            "f1": 0.09523809523809523,
+            "precision": 0.7818181818181819,
+            "recall": 0.05070754716981132
+          }
+        ],
+        "test": [
+          {
+            "threshold": 0.1,
+            "accuracy": 0.486,
+            "f1": 0.620384047267356,
+            "precision": 0.45161290322580644,
+            "recall": 0.9905660377358491
+          },
+          {
+            "threshold": 0.15,
+            "accuracy": 0.548,
+            "f1": 0.64576802507837,
+            "precision": 0.4835680751173709,
+            "recall": 0.9716981132075472
+          },
+          {
+            "threshold": 0.2,
+            "accuracy": 0.58,
+            "f1": 0.6579804560260586,
+            "precision": 0.5024875621890548,
+            "recall": 0.9528301886792453
+          },
+          {
+            "threshold": 0.25,
+            "accuracy": 0.592,
+            "f1": 0.6554054054054054,
+            "precision": 0.5105263157894737,
+            "recall": 0.9150943396226415
+          },
+          {
+            "threshold": 0.3,
+            "accuracy": 0.63,
+            "f1": 0.6678635547576302,
+            "precision": 0.5391304347826087,
+            "recall": 0.8773584905660378
+          },
+          {
+            "threshold": 0.35,
+            "accuracy": 0.664,
+            "f1": 0.6781609195402298,
+            "precision": 0.5709677419354838,
+            "recall": 0.8349056603773585
+          },
+          {
+            "threshold": 0.4,
+            "accuracy": 0.7,
+            "f1": 0.6822033898305084,
+            "precision": 0.6192307692307693,
+            "recall": 0.7594339622641509
+          },
+          {
+            "threshold": 0.45,
+            "accuracy": 0.686,
+            "f1": 0.6439909297052154,
+            "precision": 0.6200873362445415,
+            "recall": 0.6698113207547169
+          },
+          {
+            "threshold": 0.5,
+            "accuracy": 0.688,
+            "f1": 0.6138613861386139,
+            "precision": 0.6458333333333334,
+            "recall": 0.5849056603773585
+          },
+          {
+            "threshold": 0.55,
+            "accuracy": 0.698,
+            "f1": 0.5951742627345844,
+            "precision": 0.6894409937888198,
+            "recall": 0.5235849056603774
+          },
+          {
+            "threshold": 0.6,
+            "accuracy": 0.67,
+            "f1": 0.5132743362831859,
+            "precision": 0.6850393700787402,
+            "recall": 0.41037735849056606
+          },
+          {
+            "threshold": 0.65,
+            "accuracy": 0.656,
+            "f1": 0.44155844155844154,
+            "precision": 0.7083333333333334,
+            "recall": 0.32075471698113206
+          },
+          {
+            "threshold": 0.7,
+            "accuracy": 0.646,
+            "f1": 0.3832752613240418,
+            "precision": 0.7333333333333333,
+            "recall": 0.25943396226415094
+          },
+          {
+            "threshold": 0.75,
+            "accuracy": 0.616,
+            "f1": 0.2440944881889764,
+            "precision": 0.7380952380952381,
+            "recall": 0.14622641509433962
+          },
+          {
+            "threshold": 0.8,
+            "accuracy": 0.588,
+            "f1": 0.11206896551724138,
+            "precision": 0.65,
+            "recall": 0.06132075471698113
+          }
+        ]
+      },
+      "named_thresholds": {
+        "f1_optimal": 0.32,
+        "accuracy_optimal": 0.45,
+        "default": 0.5
+      },
+      "calibration_test": {
+        "bins": [
+          {
+            "mean_predicted": 0.11829039313749157,
+            "observed_rate": 0.11,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.29288149201593944,
+            "observed_rate": 0.29,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.4225642436756022,
+            "observed_rate": 0.42,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.5656652470208618,
+            "observed_rate": 0.6,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.7418293239344322,
+            "observed_rate": 0.7,
+            "n": 100
+          }
+        ],
+        "ece": 0.017980041148520733
+      },
+      "calibration_oof": {
+        "bins": [
+          {
+            "mean_predicted": 0.11311481394668016,
+            "observed_rate": 0.08,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.2927160290433157,
+            "observed_rate": 0.305,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.42876514325387843,
+            "observed_rate": 0.4475,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.5621244127447688,
+            "observed_rate": 0.5475,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.724693848827046,
+            "observed_rate": 0.74,
+            "n": 400
+          }
+        ],
+        "ece": 0.018812841113441767
+      },
+      "validation": {
+        "accuracy": 0.689,
+        "f1": 0.6188725490196079,
+        "best_f1": 0.6791762013729977,
+        "log_loss": 0.5638585350603357,
+        "roc_auc": 0.767052480509696
+      },
+      "validation_baseline": {
+        "accuracy": 0.576,
+        "f1": 0.0
+      },
+      "beats_baseline": true,
+      "baseline_accuracy": 0.576,
+      "baseline_f1": 0.5955056179775281,
+      "beats_baseline_accuracy": true,
+      "beats_baseline_f1": true,
+      "significance": {
+        "kind": "classification",
+        "n": 500,
+        "threshold": 0.5,
+        "accuracy_baseline_rule": "majority class of the training pool (= 0)",
+        "accuracy": 0.688,
+        "accuracy_ci95": [
+          0.646,
+          0.728
+        ],
+        "baseline_accuracy": 0.576,
+        "accuracy_improvement": 0.11199999999999999,
+        "accuracy_improvement_ci95": [
+          0.05600000000000005,
+          0.16599999999999993
+        ],
+        "accuracy_verdict": "better",
+        "f1_baseline_rule": "predict every customer positive",
+        "f1_ci95": [
+          0.5570291777188329,
+          0.6696837732815222
+        ],
+        "baseline_f1": 0.5955056179775281,
+        "f1_improvement_ci95": [
+          -0.04134735145434077,
+          0.07672676785489431
+        ],
+        "f1_verdict": "not_distinguishable",
+        "roc_auc": 0.7551018736897274,
+        "roc_auc_ci95": [
+          0.7124017341114923,
+          0.7954664552288749
+        ],
+        "auc_above_chance": true
+      }
+    },
+    "referral": {
+      "task": "referral",
+      "label": "Customer referral",
+      "kind": "classification",
+      "unit": "probability",
+      "target_definition": "Whether the customer referred the company to someone else (positive class = True).",
+      "features": [
+        "location_type",
+        "building_size",
+        "building_age",
+        "roofing_type",
+        "cool_roofing_quality",
+        "cool_roofing_method",
+        "avg_roof_temperature_before",
+        "num_ac_units",
+        "avg_units_before"
+      ],
+      "n_train_validation": 2000,
+      "n_test": 500,
+      "n_eligible": 2500,
+      "selected": "logistic",
+      "selected_label": "Logistic regression",
+      "selected_family": "interpretable",
+      "selected_params": {
+        "C": 0.1,
+        "class_weight": null
+      },
+      "baseline": "dummy_always_positive",
+      "baseline_label": "Baseline: predict everyone refers",
+      "threshold_policy": "F1-optimal threshold chosen on out-of-fold probabilities (train+validation only)",
+      "threshold": 0.25,
+      "calibrated": false,
+      "test": {
+        "accuracy": 0.512,
+        "f1": 0.568904593639576,
+        "precision": 0.42480211081794195,
+        "recall": 0.8609625668449198,
+        "macro_f1": 0.5033463060363779,
+        "confusion_matrix": {
+          "tn": 95,
+          "fp": 218,
+          "fn": 26,
+          "tp": 161
+        },
+        "support": {
+          "negative": 313,
+          "positive": 187
+        },
+        "positive_rate_true": 0.374,
+        "positive_rate_pred": 0.758,
+        "n": 500,
+        "brier": 0.218058254380968,
+        "log_loss": 0.6241507637052839,
+        "roc_auc": 0.6554817105465481
+      },
+      "test_at_0_5": {
+        "accuracy": 0.642,
+        "f1": 0.3674911660777385,
+        "precision": 0.5416666666666666,
+        "recall": 0.27807486631016043,
+        "macro_f1": 0.558919920556303,
+        "confusion_matrix": {
+          "tn": 269,
+          "fp": 44,
+          "fn": 135,
+          "tp": 52
+        },
+        "support": {
+          "negative": 313,
+          "positive": 187
+        },
+        "positive_rate_true": 0.374,
+        "positive_rate_pred": 0.192,
+        "n": 500,
+        "brier": 0.218058254380968,
+        "log_loss": 0.6241507637052839,
+        "roc_auc": 0.6554817105465481
+      },
+      "test_baseline": {
+        "accuracy": 0.374,
+        "f1": 0.5443959243085881,
+        "precision": 0.374,
+        "recall": 1.0,
+        "macro_f1": 0.27219796215429404,
+        "confusion_matrix": {
+          "tn": 0,
+          "fp": 313,
+          "fn": 0,
+          "tp": 187
+        },
+        "support": {
+          "negative": 313,
+          "positive": 187
+        },
+        "positive_rate_true": 0.374,
+        "positive_rate_pred": 1.0,
+        "n": 500,
+        "brier": 0.625998748001,
+        "log_loss": 8.64850998326782,
+        "roc_auc": 0.5
+      },
+      "test_baseline_always_positive": {
+        "accuracy": 0.374,
+        "f1": 0.5443959243085881,
+        "precision": 0.374,
+        "recall": 1.0,
+        "macro_f1": 0.27219796215429404,
+        "confusion_matrix": {
+          "tn": 0,
+          "fp": 313,
+          "fn": 0,
+          "tp": 187
+        },
+        "support": {
+          "negative": 313,
+          "positive": 187
+        },
+        "positive_rate_true": 0.374,
+        "positive_rate_pred": 1.0,
+        "n": 500
+      },
+      "test_baseline_always_negative": {
+        "accuracy": 0.626,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "macro_f1": 0.3849938499384994,
+        "confusion_matrix": {
+          "tn": 313,
+          "fp": 0,
+          "fn": 187,
+          "tp": 0
+        },
+        "support": {
+          "negative": 313,
+          "positive": 187
+        },
+        "positive_rate_true": 0.374,
+        "positive_rate_pred": 0.0,
+        "n": 500
+      },
+      "operating_points": {
+        "oof": [
+          {
+            "threshold": 0.1,
+            "accuracy": 0.369,
+            "f1": 0.5312035661218425,
+            "precision": 0.3620253164556962,
+            "recall": 0.99721059972106
+          },
+          {
+            "threshold": 0.15,
+            "accuracy": 0.407,
+            "f1": 0.5434949961508853,
+            "precision": 0.3753322700691122,
+            "recall": 0.9846582984658299
+          },
+          {
+            "threshold": 0.2,
+            "accuracy": 0.471,
+            "f1": 0.5613598673300166,
+            "precision": 0.39941002949852505,
+            "recall": 0.9442119944211994
+          },
+          {
+            "threshold": 0.25,
+            "accuracy": 0.521,
+            "f1": 0.5665158371040724,
+            "precision": 0.4192900200937709,
+            "recall": 0.8730822873082287
+          },
+          {
+            "threshold": 0.3,
+            "accuracy": 0.555,
+            "f1": 0.5509586276488395,
+            "precision": 0.4316205533596838,
+            "recall": 0.7615062761506276
+          },
+          {
+            "threshold": 0.35,
+            "accuracy": 0.5935,
+            "f1": 0.5281485780615206,
+            "precision": 0.452286282306163,
+            "recall": 0.6345885634588564
+          },
+          {
+            "threshold": 0.4,
+            "accuracy": 0.6385,
+            "f1": 0.5150905432595574,
+            "precision": 0.49612403100775193,
+            "recall": 0.5355648535564853
+          },
+          {
+            "threshold": 0.45,
+            "accuracy": 0.6565,
+            "f1": 0.45948072383949645,
+            "precision": 0.5270758122743683,
+            "recall": 0.4072524407252441
+          },
+          {
+            "threshold": 0.5,
+            "accuracy": 0.6515,
+            "f1": 0.35522664199814985,
+            "precision": 0.5274725274725275,
+            "recall": 0.26778242677824265
+          },
+          {
+            "threshold": 0.55,
+            "accuracy": 0.652,
+            "f1": 0.24675324675324675,
+            "precision": 0.5507246376811594,
+            "recall": 0.1589958158995816
+          },
+          {
+            "threshold": 0.6,
+            "accuracy": 0.653,
+            "f1": 0.15365853658536585,
+            "precision": 0.6116504854368932,
+            "recall": 0.08786610878661087
+          },
+          {
+            "threshold": 0.65,
+            "accuracy": 0.6455,
+            "f1": 0.07320261437908497,
+            "precision": 0.5833333333333334,
+            "recall": 0.03905160390516039
+          },
+          {
+            "threshold": 0.7,
+            "accuracy": 0.6405,
+            "f1": 0.011004126547455296,
+            "precision": 0.4,
+            "recall": 0.005578800557880056
+          },
+          {
+            "threshold": 0.75,
+            "accuracy": 0.6415,
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8,
+            "accuracy": 0.6415,
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          }
+        ],
+        "test": [
+          {
+            "threshold": 0.1,
+            "accuracy": 0.392,
+            "f1": 0.551622418879056,
+            "precision": 0.38085539714867617,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.15,
+            "accuracy": 0.438,
+            "f1": 0.5709923664122137,
+            "precision": 0.3995726495726496,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.2,
+            "accuracy": 0.474,
+            "f1": 0.5695581014729951,
+            "precision": 0.41037735849056606,
+            "recall": 0.93048128342246
+          },
+          {
+            "threshold": 0.25,
+            "accuracy": 0.512,
+            "f1": 0.568904593639576,
+            "precision": 0.42480211081794195,
+            "recall": 0.8609625668449198
+          },
+          {
+            "threshold": 0.3,
+            "accuracy": 0.564,
+            "f1": 0.5604838709677419,
+            "precision": 0.44983818770226536,
+            "recall": 0.7433155080213903
+          },
+          {
+            "threshold": 0.35,
+            "accuracy": 0.602,
+            "f1": 0.5446224256292906,
+            "precision": 0.476,
+            "recall": 0.6363636363636364
+          },
+          {
+            "threshold": 0.4,
+            "accuracy": 0.62,
+            "f1": 0.5,
+            "precision": 0.49222797927461137,
+            "recall": 0.5080213903743316
+          },
+          {
+            "threshold": 0.45,
+            "accuracy": 0.648,
+            "f1": 0.453416149068323,
+            "precision": 0.5407407407407407,
+            "recall": 0.39037433155080214
+          },
+          {
+            "threshold": 0.5,
+            "accuracy": 0.642,
+            "f1": 0.3674911660777385,
+            "precision": 0.5416666666666666,
+            "recall": 0.27807486631016043
+          },
+          {
+            "threshold": 0.55,
+            "accuracy": 0.636,
+            "f1": 0.23529411764705882,
+            "precision": 0.5490196078431373,
+            "recall": 0.1497326203208556
+          },
+          {
+            "threshold": 0.6,
+            "accuracy": 0.644,
+            "f1": 0.16822429906542055,
+            "precision": 0.6666666666666666,
+            "recall": 0.0962566844919786
+          },
+          {
+            "threshold": 0.65,
+            "accuracy": 0.644,
+            "f1": 0.1188118811881188,
+            "precision": 0.8,
+            "recall": 0.06417112299465241
+          },
+          {
+            "threshold": 0.7,
+            "accuracy": 0.632,
+            "f1": 0.041666666666666664,
+            "precision": 0.8,
+            "recall": 0.0213903743315508
+          },
+          {
+            "threshold": 0.75,
+            "accuracy": 0.63,
+            "f1": 0.021164021164021163,
+            "precision": 1.0,
+            "recall": 0.0106951871657754
+          },
+          {
+            "threshold": 0.8,
+            "accuracy": 0.626,
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          }
+        ]
+      },
+      "named_thresholds": {
+        "f1_optimal": 0.25,
+        "accuracy_optimal": 0.45,
+        "default": 0.5
+      },
+      "calibration_test": {
+        "bins": [
+          {
+            "mean_predicted": 0.16465142442156086,
+            "observed_rate": 0.2,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.2688537779295752,
+            "observed_rate": 0.31,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.34978604309257705,
+            "observed_rate": 0.36,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.44006358741052226,
+            "observed_rate": 0.45,
+            "n": 100
+          },
+          {
+            "mean_predicted": 0.5730970286726759,
+            "observed_rate": 0.55,
+            "n": 100
+          }
+        ],
+        "ece": 0.023948439163688093
+      },
+      "calibration_oof": {
+        "bins": [
+          {
+            "mean_predicted": 0.16817285318278727,
+            "observed_rate": 0.155,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.27095861759402284,
+            "observed_rate": 0.335,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.35166738453573393,
+            "observed_rate": 0.33,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.4392918642065229,
+            "observed_rate": 0.435,
+            "n": 400
+          },
+          {
+            "mean_predicted": 0.5653389830836233,
+            "observed_rate": 0.5375,
+            "n": 400
+          }
+        ],
+        "ece": 0.026202493482928916
+      },
+      "validation": {
+        "accuracy": 0.6515,
+        "f1": 0.35522664199814985,
+        "best_f1": 0.5665158371040724,
+        "log_loss": 0.6153895686077778,
+        "roc_auc": 0.6586158878413237
+      },
+      "validation_baseline": {
+        "accuracy": 0.3585,
+        "f1": 0.527788001472212
+      },
+      "beats_baseline": true,
+      "baseline_accuracy": 0.626,
+      "baseline_f1": 0.5443959243085881,
+      "beats_baseline_accuracy": false,
+      "beats_baseline_f1": true,
+      "significance": {
+        "kind": "classification",
+        "n": 500,
+        "threshold": 0.25,
+        "accuracy_baseline_rule": "majority class of the training pool (= 0)",
+        "accuracy": 0.512,
+        "accuracy_ci95": [
+          0.468,
+          0.5580499999999998
+        ],
+        "baseline_accuracy": 0.626,
+        "accuracy_improvement": -0.11399999999999999,
+        "accuracy_improvement_ci95": [
+          -0.19000000000000006,
+          -0.03799999999999992
+        ],
+        "accuracy_verdict": "worse",
+        "f1_baseline_rule": "predict every customer positive",
+        "f1_ci95": [
+          0.5175600739371534,
+          0.6164389559292758
+        ],
+        "baseline_f1": 0.5443959243085881,
+        "f1_improvement_ci95": [
+          -0.00482855628902786,
+          0.052912737061120325
+        ],
+        "f1_verdict": "not_distinguishable",
+        "roc_auc": 0.6554817105465481,
+        "roc_auc_ci95": [
+          0.6059088530199547,
+          0.7029158424638444
+        ],
+        "auc_above_chance": true
+      }
+    }
+  },
+  "task_order": [
+    "cost",
+    "temperature_drop",
+    "units_saved",
+    "rating",
+    "high_rating",
+    "referral"
+  ]
+}
